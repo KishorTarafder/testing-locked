@@ -34,7 +34,9 @@
             this.LBLUSERNAME = new System.Windows.Forms.Label();
             this.LBLPASSWORD = new System.Windows.Forms.Label();
             this.TXTPASSWORD = new System.Windows.Forms.TextBox();
-            this.BTNPASSWORD = new System.Windows.Forms.Button();
+            this.BTNSIGNUP = new System.Windows.Forms.Button();
+            this.BTNFORGOTPASS = new System.Windows.Forms.Button();
+            this.BTNTESTADMIN = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BTNLOGIN
@@ -64,7 +66,7 @@
             this.TXTUSERNAME.Name = "TXTUSERNAME";
             this.TXTUSERNAME.Size = new System.Drawing.Size(307, 48);
             this.TXTUSERNAME.TabIndex = 3;
-            this.TXTUSERNAME.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.TXTUSERNAME.TextChanged += new System.EventHandler(this.TXTUSERNAME_TextChanged);
             // 
             // LBLUSERNAME
             // 
@@ -96,22 +98,44 @@
             this.TXTPASSWORD.TabIndex = 6;
             this.TXTPASSWORD.TextChanged += new System.EventHandler(this.TXTPASSWORD_TextChanged);
             // 
-            // BTNPASSWORD
+            // BTNSIGNUP
             // 
-            this.BTNPASSWORD.Location = new System.Drawing.Point(384, 456);
-            this.BTNPASSWORD.Name = "BTNPASSWORD";
-            this.BTNPASSWORD.Size = new System.Drawing.Size(167, 74);
-            this.BTNPASSWORD.TabIndex = 7;
-            this.BTNPASSWORD.Text = "PASSWORD";
-            this.BTNPASSWORD.UseVisualStyleBackColor = true;
-            this.BTNPASSWORD.Click += new System.EventHandler(this.BTNPASSWORD_Click);
+            this.BTNSIGNUP.Location = new System.Drawing.Point(384, 456);
+            this.BTNSIGNUP.Name = "BTNSIGNUP";
+            this.BTNSIGNUP.Size = new System.Drawing.Size(167, 74);
+            this.BTNSIGNUP.TabIndex = 7;
+            this.BTNSIGNUP.Text = "SIGN UP";
+            this.BTNSIGNUP.UseVisualStyleBackColor = true;
+            this.BTNSIGNUP.Click += new System.EventHandler(this.BTNPASSWORD_Click);
+            // 
+            // BTNFORGOTPASS
+            // 
+            this.BTNFORGOTPASS.Location = new System.Drawing.Point(192, 546);
+            this.BTNFORGOTPASS.Name = "BTNFORGOTPASS";
+            this.BTNFORGOTPASS.Size = new System.Drawing.Size(167, 74);
+            this.BTNFORGOTPASS.TabIndex = 8;
+            this.BTNFORGOTPASS.Text = "FORGOTPASSWORD";
+            this.BTNFORGOTPASS.UseVisualStyleBackColor = true;
+            this.BTNFORGOTPASS.Click += new System.EventHandler(this.BTNFORGOTPASS_Click);
+            // 
+            // BTNTESTADMIN
+            // 
+            this.BTNTESTADMIN.Location = new System.Drawing.Point(384, 546);
+            this.BTNTESTADMIN.Name = "BTNTESTADMIN";
+            this.BTNTESTADMIN.Size = new System.Drawing.Size(167, 74);
+            this.BTNTESTADMIN.TabIndex = 9;
+            this.BTNTESTADMIN.Text = "TESTADMIN";
+            this.BTNTESTADMIN.UseVisualStyleBackColor = true;
+            this.BTNTESTADMIN.Click += new System.EventHandler(this.BTNTESTADMIN_Click);
             // 
             // LOGINFORM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1093, 663);
-            this.Controls.Add(this.BTNPASSWORD);
+            this.Controls.Add(this.BTNTESTADMIN);
+            this.Controls.Add(this.BTNFORGOTPASS);
+            this.Controls.Add(this.BTNSIGNUP);
             this.Controls.Add(this.TXTPASSWORD);
             this.Controls.Add(this.LBLPASSWORD);
             this.Controls.Add(this.LBLUSERNAME);
@@ -132,7 +156,9 @@
         private System.Windows.Forms.Label LBLUSERNAME;
         private System.Windows.Forms.Label LBLPASSWORD;
         private System.Windows.Forms.TextBox TXTPASSWORD;
-        private System.Windows.Forms.Button BTNPASSWORD;
+        private System.Windows.Forms.Button BTNSIGNUP;
+        private System.Windows.Forms.Button BTNFORGOTPASS;
+        private System.Windows.Forms.Button BTNTESTADMIN;
     }
 }
 

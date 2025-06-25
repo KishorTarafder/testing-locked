@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>C_PROJECT.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,6 +49,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin_control_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin_control_form.Designer.cs">
+      <DependentUpon>admin_control_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="course_upload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="course_upload.Designer.cs">
+      <DependentUpon>course_upload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRUD.cs" />
+    <Compile Include="DBConnection.cs" />
+    <Compile Include="forgotpass_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forgotpass_form.Designer.cs">
+      <DependentUpon>forgotpass_form.cs</DependentUpon>
+    </Compile>
     <Compile Include="loginform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +83,21 @@
     <Compile Include="signup_form.Designer.cs">
       <DependentUpon>signup_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="student_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="student_form.Designer.cs">
+      <DependentUpon>student_form.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="admin_control_form.resx">
+      <DependentUpon>admin_control_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="course_upload.resx">
+      <DependentUpon>course_upload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forgotpass_form.resx">
+      <DependentUpon>forgotpass_form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="loginform.resx">
       <DependentUpon>loginform.cs</DependentUpon>
     </EmbeddedResource>
@@ -74,6 +112,9 @@
     </Compile>
     <EmbeddedResource Include="signup_form.resx">
       <DependentUpon>signup_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="student_form.resx">
+      <DependentUpon>student_form.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

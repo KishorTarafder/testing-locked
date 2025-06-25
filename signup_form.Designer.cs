@@ -38,6 +38,7 @@
             this.TXTNAME = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.BTNSIGNUP = new System.Windows.Forms.Button();
+            this.BTNGOBACK = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LBLLOGIN
@@ -53,7 +54,7 @@
             // 
             // TXTPASSWORD
             // 
-            this.TXTPASSWORD.Location = new System.Drawing.Point(135, 392);
+            this.TXTPASSWORD.Location = new System.Drawing.Point(135, 357);
             this.TXTPASSWORD.Multiline = true;
             this.TXTPASSWORD.Name = "TXTPASSWORD";
             this.TXTPASSWORD.Size = new System.Drawing.Size(307, 48);
@@ -63,7 +64,7 @@
             // 
             this.LBLPASSWORD.AutoSize = true;
             this.LBLPASSWORD.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLPASSWORD.Location = new System.Drawing.Point(128, 328);
+            this.LBLPASSWORD.Location = new System.Drawing.Point(133, 294);
             this.LBLPASSWORD.Name = "LBLPASSWORD";
             this.LBLPASSWORD.Size = new System.Drawing.Size(218, 38);
             this.LBLPASSWORD.TabIndex = 9;
@@ -73,15 +74,16 @@
             // 
             this.LBLUSERNAME.AutoSize = true;
             this.LBLUSERNAME.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLUSERNAME.Location = new System.Drawing.Point(128, 188);
+            this.LBLUSERNAME.Location = new System.Drawing.Point(133, 152);
             this.LBLUSERNAME.Name = "LBLUSERNAME";
             this.LBLUSERNAME.Size = new System.Drawing.Size(212, 38);
             this.LBLUSERNAME.TabIndex = 8;
             this.LBLUSERNAME.Text = "USERNAME";
+            this.LBLUSERNAME.Click += new System.EventHandler(this.LBLUSERNAME_Click);
             // 
             // TXTUSERNAME
             // 
-            this.TXTUSERNAME.Location = new System.Drawing.Point(135, 256);
+            this.TXTUSERNAME.Location = new System.Drawing.Point(135, 212);
             this.TXTUSERNAME.Multiline = true;
             this.TXTUSERNAME.Name = "TXTUSERNAME";
             this.TXTUSERNAME.Size = new System.Drawing.Size(307, 48);
@@ -92,7 +94,7 @@
             // 
             this.LBLUSERROLE.AutoSize = true;
             this.LBLUSERROLE.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLUSERROLE.Location = new System.Drawing.Point(128, 483);
+            this.LBLUSERROLE.Location = new System.Drawing.Point(134, 442);
             this.LBLUSERROLE.Name = "LBLUSERROLE";
             this.LBLUSERROLE.Size = new System.Drawing.Size(217, 38);
             this.LBLUSERROLE.TabIndex = 11;
@@ -124,7 +126,7 @@
             "STUDENT",
             "TEACHER",
             "GUEST"});
-            this.comboBox1.Location = new System.Drawing.Point(336, 497);
+            this.comboBox1.Location = new System.Drawing.Point(357, 456);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 15;
@@ -132,7 +134,7 @@
             // 
             // BTNSIGNUP
             // 
-            this.BTNSIGNUP.Location = new System.Drawing.Point(135, 566);
+            this.BTNSIGNUP.Location = new System.Drawing.Point(141, 522);
             this.BTNSIGNUP.Name = "BTNSIGNUP";
             this.BTNSIGNUP.Size = new System.Drawing.Size(167, 74);
             this.BTNSIGNUP.TabIndex = 16;
@@ -140,11 +142,22 @@
             this.BTNSIGNUP.UseVisualStyleBackColor = true;
             this.BTNSIGNUP.Click += new System.EventHandler(this.BTNSIGNUP_Click);
             // 
+            // BTNGOBACK
+            // 
+            this.BTNGOBACK.Location = new System.Drawing.Point(451, 513);
+            this.BTNGOBACK.Name = "BTNGOBACK";
+            this.BTNGOBACK.Size = new System.Drawing.Size(167, 74);
+            this.BTNGOBACK.TabIndex = 17;
+            this.BTNGOBACK.Text = "LOGIN";
+            this.BTNGOBACK.UseVisualStyleBackColor = true;
+            this.BTNGOBACK.Click += new System.EventHandler(this.BTNGOBACK_Click);
+            // 
             // signup_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1114, 730);
+            this.Controls.Add(this.BTNGOBACK);
             this.Controls.Add(this.BTNSIGNUP);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.TXTNAME);
@@ -174,5 +187,6 @@
         private System.Windows.Forms.TextBox TXTNAME;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button BTNSIGNUP;
+        private System.Windows.Forms.Button BTNGOBACK;
     }
 }
