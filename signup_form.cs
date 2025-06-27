@@ -45,6 +45,12 @@ namespace C_PROJECT
 
 
 
+
+
+
+
+
+
         private void TXTUSERNAME_TextChanged(object sender, EventArgs e)
         {
 
@@ -78,14 +84,23 @@ namespace C_PROJECT
             //    MessageBox.Show("Signup failed!");
 
 
-            
+
             // Check if all fields are filled
             if (string.IsNullOrEmpty(TXTUSERNAME.Text) ||
                 string.IsNullOrEmpty(TXTPASSWORD.Text) ||
-                string.IsNullOrEmpty(comboBox1.Text))
+                string.IsNullOrEmpty(comboBox1.Text) ||
+                string.IsNullOrEmpty(TXTCONFIRMPASS.Text)) // <-- ADDED: check confirm password field
             {
                 MessageBox.Show("Please fill all fields!", "Missing Information",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // ADD: Check if Password and Confirm Password match
+            if (TXTPASSWORD.Text != TXTCONFIRMPASS.Text)
+            {
+                MessageBox.Show("Password and Confirm Password do not match!", "Password Mismatch",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -116,9 +131,14 @@ namespace C_PROJECT
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Clear the form
-                TXTUSERNAME.Text = "";
-                TXTPASSWORD.Text = "";
-                comboBox1.Text = "";
+
+                Form LOGIN_FORM = new LOGINFORM();
+                this.Hide();
+                LOGIN_FORM.Show();
+
+                //TXTUSERNAME.Text = "";
+                //TXTPASSWORD.Text = "";
+                //comboBox1.Text = "";
             }
             else
             {
@@ -130,7 +150,6 @@ namespace C_PROJECT
 
 
 
-        
 
 
 
@@ -141,9 +160,24 @@ namespace C_PROJECT
 
         private void BTNGOBACK_Click(object sender, EventArgs e)
         {
-            Form lf = new LOGINFORM(); 
+            Form lf = new LOGINFORM();
             this.Hide();
             lf.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TXTCONFIRMPASS_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TXTPASSWORD_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

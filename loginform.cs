@@ -76,6 +76,16 @@ namespace C_PROJECT
                         //new customer_form().Show();
                         //this.Hide();
                     }
+
+
+                    else if (userType == "GUEST")
+                    {
+                        new guest_forrm().Show();
+                        this.Hide();    
+
+                    }
+
+
                     else
                     {
                         MessageBox.Show("Unknown user type.");

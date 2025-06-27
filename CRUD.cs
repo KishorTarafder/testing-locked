@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace C_PROJECT
 {
@@ -55,7 +56,7 @@ namespace C_PROJECT
                 con.Close();
                 return result;
             }
-            return 0;
+            return  0;
         }
 
         public int Delete(string query)

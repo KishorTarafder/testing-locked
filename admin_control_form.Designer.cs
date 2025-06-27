@@ -103,6 +103,7 @@
             this.TXTID.Location = new System.Drawing.Point(176, 216);
             this.TXTID.Multiline = true;
             this.TXTID.Name = "TXTID";
+            this.TXTID.ReadOnly = true;
             this.TXTID.Size = new System.Drawing.Size(307, 48);
             this.TXTID.TabIndex = 5;
             this.TXTID.TextChanged += new System.EventHandler(this.TXTID_TextChanged);

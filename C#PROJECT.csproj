@@ -69,6 +69,12 @@
     <Compile Include="forgotpass_form.Designer.cs">
       <DependentUpon>forgotpass_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="guest_forrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="guest_forrm.Designer.cs">
+      <DependentUpon>guest_forrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="loginform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forgotpass_form.resx">
       <DependentUpon>forgotpass_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="guest_forrm.resx">
+      <DependentUpon>guest_forrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="loginform.resx">
       <DependentUpon>loginform.cs</DependentUpon>

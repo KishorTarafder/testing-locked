@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LOGINFORM));
             this.BTNLOGIN = new System.Windows.Forms.Button();
             this.LBLLOGIN = new System.Windows.Forms.Label();
             this.TXTUSERNAME = new System.Windows.Forms.TextBox();
@@ -41,9 +42,10 @@
             // 
             // BTNLOGIN
             // 
-            this.BTNLOGIN.Location = new System.Drawing.Point(192, 456);
+            this.BTNLOGIN.Location = new System.Drawing.Point(52, 410);
+            this.BTNLOGIN.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.BTNLOGIN.Name = "BTNLOGIN";
-            this.BTNLOGIN.Size = new System.Drawing.Size(167, 74);
+            this.BTNLOGIN.Size = new System.Drawing.Size(374, 49);
             this.BTNLOGIN.TabIndex = 1;
             this.BTNLOGIN.Text = "LOGIN";
             this.BTNLOGIN.UseVisualStyleBackColor = true;
@@ -53,7 +55,8 @@
             // 
             this.LBLLOGIN.AutoSize = true;
             this.LBLLOGIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLLOGIN.Location = new System.Drawing.Point(452, 41);
+            this.LBLLOGIN.Location = new System.Drawing.Point(684, 257);
+            this.LBLLOGIN.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LBLLOGIN.Name = "LBLLOGIN";
             this.LBLLOGIN.Size = new System.Drawing.Size(124, 38);
             this.LBLLOGIN.TabIndex = 2;
@@ -61,20 +64,27 @@
             // 
             // TXTUSERNAME
             // 
-            this.TXTUSERNAME.Location = new System.Drawing.Point(192, 188);
+            this.TXTUSERNAME.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TXTUSERNAME.Font = new System.Drawing.Font("Microsoft Uighur", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXTUSERNAME.Location = new System.Drawing.Point(96, 201);
+            this.TXTUSERNAME.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.TXTUSERNAME.Multiline = true;
             this.TXTUSERNAME.Name = "TXTUSERNAME";
-            this.TXTUSERNAME.Size = new System.Drawing.Size(307, 48);
+            this.TXTUSERNAME.Size = new System.Drawing.Size(330, 34);
             this.TXTUSERNAME.TabIndex = 3;
             this.TXTUSERNAME.TextChanged += new System.EventHandler(this.TXTUSERNAME_TextChanged);
             // 
             // LBLUSERNAME
             // 
             this.LBLUSERNAME.AutoSize = true;
-            this.LBLUSERNAME.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLUSERNAME.Location = new System.Drawing.Point(185, 135);
+            this.LBLUSERNAME.BackColor = System.Drawing.Color.Transparent;
+            this.LBLUSERNAME.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.LBLUSERNAME.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBLUSERNAME.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.LBLUSERNAME.Location = new System.Drawing.Point(74, 161);
+            this.LBLUSERNAME.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LBLUSERNAME.Name = "LBLUSERNAME";
-            this.LBLUSERNAME.Size = new System.Drawing.Size(212, 38);
+            this.LBLUSERNAME.Size = new System.Drawing.Size(144, 27);
             this.LBLUSERNAME.TabIndex = 4;
             this.LBLUSERNAME.Text = "USERNAME";
             this.LBLUSERNAME.Click += new System.EventHandler(this.label1_Click);
@@ -82,27 +92,35 @@
             // LBLPASSWORD
             // 
             this.LBLPASSWORD.AutoSize = true;
-            this.LBLPASSWORD.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLPASSWORD.Location = new System.Drawing.Point(185, 275);
+            this.LBLPASSWORD.BackColor = System.Drawing.Color.Transparent;
+            this.LBLPASSWORD.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.LBLPASSWORD.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBLPASSWORD.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.LBLPASSWORD.Location = new System.Drawing.Point(74, 268);
+            this.LBLPASSWORD.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LBLPASSWORD.Name = "LBLPASSWORD";
-            this.LBLPASSWORD.Size = new System.Drawing.Size(218, 38);
+            this.LBLPASSWORD.Size = new System.Drawing.Size(148, 27);
             this.LBLPASSWORD.TabIndex = 5;
             this.LBLPASSWORD.Text = "PASSWORD";
             // 
             // TXTPASSWORD
             // 
-            this.TXTPASSWORD.Location = new System.Drawing.Point(192, 356);
+            this.TXTPASSWORD.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TXTPASSWORD.Font = new System.Drawing.Font("Microsoft Uighur", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXTPASSWORD.Location = new System.Drawing.Point(96, 319);
+            this.TXTPASSWORD.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.TXTPASSWORD.Multiline = true;
             this.TXTPASSWORD.Name = "TXTPASSWORD";
-            this.TXTPASSWORD.Size = new System.Drawing.Size(307, 48);
+            this.TXTPASSWORD.Size = new System.Drawing.Size(285, 31);
             this.TXTPASSWORD.TabIndex = 6;
             this.TXTPASSWORD.TextChanged += new System.EventHandler(this.TXTPASSWORD_TextChanged);
             // 
             // BTNSIGNUP
             // 
-            this.BTNSIGNUP.Location = new System.Drawing.Point(384, 456);
+            this.BTNSIGNUP.Location = new System.Drawing.Point(52, 478);
+            this.BTNSIGNUP.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.BTNSIGNUP.Name = "BTNSIGNUP";
-            this.BTNSIGNUP.Size = new System.Drawing.Size(167, 74);
+            this.BTNSIGNUP.Size = new System.Drawing.Size(128, 32);
             this.BTNSIGNUP.TabIndex = 7;
             this.BTNSIGNUP.Text = "SIGN UP";
             this.BTNSIGNUP.UseVisualStyleBackColor = true;
@@ -110,19 +128,24 @@
             // 
             // BTNFORGOTPASS
             // 
-            this.BTNFORGOTPASS.Location = new System.Drawing.Point(192, 546);
+            this.BTNFORGOTPASS.BackColor = System.Drawing.Color.Transparent;
+            this.BTNFORGOTPASS.FlatAppearance.BorderSize = 0;
+            this.BTNFORGOTPASS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTNFORGOTPASS.Location = new System.Drawing.Point(248, 356);
+            this.BTNFORGOTPASS.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.BTNFORGOTPASS.Name = "BTNFORGOTPASS";
-            this.BTNFORGOTPASS.Size = new System.Drawing.Size(167, 74);
+            this.BTNFORGOTPASS.Size = new System.Drawing.Size(188, 48);
             this.BTNFORGOTPASS.TabIndex = 8;
-            this.BTNFORGOTPASS.Text = "FORGOTPASSWORD";
-            this.BTNFORGOTPASS.UseVisualStyleBackColor = true;
+            this.BTNFORGOTPASS.Text = "forgot password ?";
+            this.BTNFORGOTPASS.UseVisualStyleBackColor = false;
             this.BTNFORGOTPASS.Click += new System.EventHandler(this.BTNFORGOTPASS_Click);
             // 
             // BTNTESTADMIN
             // 
-            this.BTNTESTADMIN.Location = new System.Drawing.Point(384, 546);
+            this.BTNTESTADMIN.Location = new System.Drawing.Point(767, 546);
+            this.BTNTESTADMIN.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.BTNTESTADMIN.Name = "BTNTESTADMIN";
-            this.BTNTESTADMIN.Size = new System.Drawing.Size(167, 74);
+            this.BTNTESTADMIN.Size = new System.Drawing.Size(188, 74);
             this.BTNTESTADMIN.TabIndex = 9;
             this.BTNTESTADMIN.Text = "TESTADMIN";
             this.BTNTESTADMIN.UseVisualStyleBackColor = true;
@@ -130,9 +153,12 @@
             // 
             // LOGINFORM
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1093, 663);
+            this.AutoSize = true;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(982, 625);
             this.Controls.Add(this.BTNTESTADMIN);
             this.Controls.Add(this.BTNFORGOTPASS);
             this.Controls.Add(this.BTNSIGNUP);
@@ -142,7 +168,13 @@
             this.Controls.Add(this.TXTUSERNAME);
             this.Controls.Add(this.LBLLOGIN);
             this.Controls.Add(this.BTNLOGIN);
+            this.DoubleBuffered = true;
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.MaximumSize = new System.Drawing.Size(1000, 710);
+            this.MinimumSize = new System.Drawing.Size(1000, 622);
             this.Name = "LOGINFORM";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "LOGIN";
             this.ResumeLayout(false);
             this.PerformLayout();
