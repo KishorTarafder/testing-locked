@@ -50,5 +50,12 @@ namespace C_PROJECT
             else
                 MessageBox.Show("Failed to change password.");
         }
+
+        private void BTNBACK_Click(object sender, EventArgs e)
+        {
+            LOGINFORM loginForm = new LOGINFORM();
+            this.Hide(); // Hide the current form
+            loginForm.Show(); // Show the login form
+        }
     }
 }

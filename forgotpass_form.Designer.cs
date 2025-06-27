@@ -36,6 +36,7 @@
             this.LBLNEWPASS = new System.Windows.Forms.Label();
             this.NEWPASS = new System.Windows.Forms.TextBox();
             this.LBLCHANGEPASS = new System.Windows.Forms.Label();
+            this.BTNBACK = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BTNCHANGEPASS
@@ -53,7 +54,7 @@
             this.TXTOLDPASS.Location = new System.Drawing.Point(103, 295);
             this.TXTOLDPASS.Multiline = true;
             this.TXTOLDPASS.Name = "TXTOLDPASS";
-            this.TXTOLDPASS.Size = new System.Drawing.Size(307, 48);
+            this.TXTOLDPASS.Size = new System.Drawing.Size(376, 48);
             this.TXTOLDPASS.TabIndex = 20;
             this.TXTOLDPASS.TextChanged += new System.EventHandler(this.TXTOLDPASS_TextChanged);
             // 
@@ -83,7 +84,7 @@
             this.TXTUSERNAME.Location = new System.Drawing.Point(103, 150);
             this.TXTUSERNAME.Multiline = true;
             this.TXTUSERNAME.Name = "TXTUSERNAME";
-            this.TXTUSERNAME.Size = new System.Drawing.Size(307, 48);
+            this.TXTUSERNAME.Size = new System.Drawing.Size(376, 48);
             this.TXTUSERNAME.TabIndex = 17;
             this.TXTUSERNAME.TextChanged += new System.EventHandler(this.TXTUSERNAME_TextChanged);
             // 
@@ -102,7 +103,7 @@
             this.NEWPASS.Location = new System.Drawing.Point(109, 454);
             this.NEWPASS.Multiline = true;
             this.NEWPASS.Name = "NEWPASS";
-            this.NEWPASS.Size = new System.Drawing.Size(307, 48);
+            this.NEWPASS.Size = new System.Drawing.Size(370, 48);
             this.NEWPASS.TabIndex = 23;
             this.NEWPASS.TextChanged += new System.EventHandler(this.NEWPASS_TextChanged);
             // 
@@ -116,11 +117,22 @@
             this.LBLCHANGEPASS.TabIndex = 24;
             this.LBLCHANGEPASS.Text = "CHANGE PASSWORD";
             // 
+            // BTNBACK
+            // 
+            this.BTNBACK.Location = new System.Drawing.Point(300, 536);
+            this.BTNBACK.Name = "BTNBACK";
+            this.BTNBACK.Size = new System.Drawing.Size(179, 74);
+            this.BTNBACK.TabIndex = 25;
+            this.BTNBACK.Text = "BACK";
+            this.BTNBACK.UseVisualStyleBackColor = true;
+            this.BTNBACK.Click += new System.EventHandler(this.BTNBACK_Click);
+            // 
             // forgotpass_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1095, 666);
+            this.Controls.Add(this.BTNBACK);
             this.Controls.Add(this.LBLCHANGEPASS);
             this.Controls.Add(this.NEWPASS);
             this.Controls.Add(this.LBLNEWPASS);
@@ -146,5 +158,6 @@
         private System.Windows.Forms.Label LBLNEWPASS;
         private System.Windows.Forms.TextBox NEWPASS;
         private System.Windows.Forms.Label LBLCHANGEPASS;
+        private System.Windows.Forms.Button BTNBACK;
     }
 }

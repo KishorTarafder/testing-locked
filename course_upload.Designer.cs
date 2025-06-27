@@ -195,13 +195,13 @@
             // 
             // BTNBACK
             // 
-            this.BTNBACK.Location = new System.Drawing.Point(875, 607);
+            this.BTNBACK.Location = new System.Drawing.Point(834, 586);
             this.BTNBACK.Name = "BTNBACK";
-            this.BTNBACK.Size = new System.Drawing.Size(111, 28);
+            this.BTNBACK.Size = new System.Drawing.Size(152, 37);
             this.BTNBACK.TabIndex = 23;
             this.BTNBACK.Text = "BACK";
             this.BTNBACK.UseVisualStyleBackColor = true;
-            this.BTNBACK.Click += new System.EventHandler(this.BTNBACK_Click);
+            this.BTNBACK.Click += new System.EventHandler(this.BTNBACK_Click_1);
             // 
             // course_upload
             // 

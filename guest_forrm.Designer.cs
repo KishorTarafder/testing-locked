@@ -33,6 +33,7 @@
             this.LBLUSER = new System.Windows.Forms.Label();
             this.FLOWLATOUTPNL = new System.Windows.Forms.FlowLayoutPanel();
             this.TXTSEARCH = new System.Windows.Forms.TextBox();
+            this.BTNBACK = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LBLBALACE
@@ -83,11 +84,22 @@
             this.TXTSEARCH.TabIndex = 10;
             this.TXTSEARCH.TextChanged += new System.EventHandler(this.TXTSEARCH_TextChanged);
             // 
+            // BTNBACK
+            // 
+            this.BTNBACK.Location = new System.Drawing.Point(468, 22);
+            this.BTNBACK.Name = "BTNBACK";
+            this.BTNBACK.Size = new System.Drawing.Size(168, 46);
+            this.BTNBACK.TabIndex = 19;
+            this.BTNBACK.Text = "BACK";
+            this.BTNBACK.UseVisualStyleBackColor = true;
+            this.BTNBACK.Click += new System.EventHandler(this.BTNBACK_Click);
+            // 
             // guest_forrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(960, 565);
+            this.Controls.Add(this.BTNBACK);
             this.Controls.Add(this.TXTSEARCH);
             this.Controls.Add(this.LBLBALACE);
             this.Controls.Add(this.LBLSHOWUSRNAME);
@@ -107,5 +119,6 @@
         private System.Windows.Forms.Label LBLUSER;
         private System.Windows.Forms.FlowLayoutPanel FLOWLATOUTPNL;
         private System.Windows.Forms.TextBox TXTSEARCH;
+        private System.Windows.Forms.Button BTNBACK;
     }
 }

@@ -193,5 +193,17 @@ namespace C_PROJECT
         {
 
         }
+
+        private void BTNBACK_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BTNBACK_Click_1(object sender, EventArgs e)
+        {
+            LOGINFORM loginForm = new LOGINFORM();
+            this.Hide(); // Hide the current form
+            loginForm.Show(); // Show the login form
+        }
     }
 }
