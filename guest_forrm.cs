@@ -22,14 +22,13 @@ namespace C_PROJECT
         {
             FLOWLATOUTPNL.Controls.Clear(); // Clear old course cards
 
-            // Your connection string; adjust as needed!
-            string connStr = "Data Source=DESKTOP-HNPCF1F\\SQLEXPRESS;Initial Catalog=DBLOGIN;Integrated Security=True;";
+            // Using centralized connection string from DBConnection
             string sql = "SELECT ID, TITLE, PRICE, THUMBNAIL FROM COURSES";
 
             if (!string.IsNullOrEmpty(searchTerm))
                 sql += " WHERE TITLE LIKE @search";
 
-            using (SqlConnection conn = new SqlConnection(connStr))
+            using (SqlConnection conn = DBConnection.GetConnection())
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);

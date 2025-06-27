@@ -16,8 +16,6 @@ namespace C_PROJECT
     {
 
         string imagepath;
-        // string connectionString = "Data Source=DESKTOP-HNPCF1F\\SQLEXPRESS;Initial Catalog=DBLOGIN;Integrated Security=True;Encrypt=True;";
-        string connectionString = "Data Source=DESKTOP-HNPCF1F\\SQLEXPRESS;Initial Catalog=DBLOGIN;Integrated Security=True;";
 
 
 
@@ -74,7 +72,7 @@ namespace C_PROJECT
 
 
             //.............//
-            SqlConnection conn = new SqlConnection(connectionString);
+            SqlConnection conn = DBConnection.GetConnection();
             try
             {
               //  conn.Open();

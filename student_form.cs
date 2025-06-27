@@ -92,7 +92,7 @@ namespace C_PROJECT
         //{
         //    FLOWLATOUTPNL.Controls.Clear(); // Remove old cards
 
-        //    string connStr = "Data Source=DESKTOP-HNPCF1F\\SQLEXPRESS;Initial Catalog=DBLOGIN;Integrated Security=True;";
+        //    // This old method is commented out - using centralized DBConnection now
         //    string sql = "SELECT ID, TITLE, PRICE, YOUTUBEID, THUMBNAIL FROM COURSES";
 
         //    using (SqlConnection conn = new SqlConnection(connStr))
@@ -157,10 +157,10 @@ namespace C_PROJECT
         {
             FLOWLATOUTPNL.Controls.Clear(); // Remove old cards
 
-            string connStr = "Data Source=DESKTOP-HNPCF1F\\SQLEXPRESS;Initial Catalog=DBLOGIN;Integrated Security=True;";
+            // Using centralized connection string from DBConnection
             string sql = "SELECT ID, TITLE, PRICE, YOUTUBEID, THUMBNAIL FROM COURSES";
 
-            using (SqlConnection conn = new SqlConnection(connStr))
+            using (SqlConnection conn = DBConnection.GetConnection())
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);

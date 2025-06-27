@@ -26,11 +26,7 @@ namespace C_PROJECT
             InitializeComponent();
         }
 
-        // pore maybe delete 
-
-        //SqlConnection con = new SqlConnection("Data Source=DESKTOP-HNPCF1F\\SQLEXPRESS;Initial Catalog=DBLOGIN;Integrated Security=True;");
-
-
+        // Using centralized DBConnection class
         SqlConnection con = DBConnection.GetConnection();
 
 
