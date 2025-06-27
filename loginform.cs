@@ -73,8 +73,8 @@ namespace C_PROJECT
                     }
                     else if (userType == "TEACHER")
                     {
-                        //new customer_form().Show();
-                        //this.Hide();
+                        new course_upload(TXTUSERNAME.Text).Show(); // Pass username!
+                        this.Hide();
                     }
 
 
@@ -135,7 +135,7 @@ namespace C_PROJECT
             //this.Hide();
             //adminForm.Show();
 
-            Form course_upload = new course_upload();
+            Form course_upload = new course_upload(TXTUSERNAME.Text); // Pass the username
             this.Hide();
             course_upload.Show();
         }

@@ -16,12 +16,54 @@ namespace C_PROJECT
     {
 
         string imagepath;
+        private string username; // Store the logged-in user's username
 
-
+        // Constructor that accepts username
+        public course_upload(string user)
+        {
+            InitializeComponent();
+            username = user; // Set the username for use in this form
+        }
 
         public course_upload()
         {
             InitializeComponent();
+        }
+
+        // Method to show user information in the labels
+        private void ShowUserInfo()
+        {
+            if (string.IsNullOrEmpty(username))
+            {
+                LBLSHOWUSRNAME.Text = "Guest User";
+                LBLBALACE.Text = "Balance: N/A";
+                return;
+            }
+
+            CRUD db = new CRUD();
+
+            // Prepare a query to get the user's info
+            string sql = $"SELECT Username, Balance FROM signup_info WHERE Username = '{username}'";
+
+            // Execute the query, get the results in a DataTable
+            DataTable dt = db.Select(sql);
+
+            if (dt.Rows.Count == 1)
+            {
+                // Get the username and balance from the first row
+                string user = dt.Rows[0]["Username"].ToString();
+                int bal = Convert.ToInt32(dt.Rows[0]["Balance"]);
+
+                // Show in your labels
+                LBLSHOWUSRNAME.Text = $"Welcome, {user}!";
+                LBLBALACE.Text = $"Balance: {bal}";
+            }
+            else
+            {
+                // If not found, show something empty or error
+                LBLSHOWUSRNAME.Text = "Unknown user";
+                LBLBALACE.Text = "Balance: N/A";
+            }
         }
 
         private void TXTYOUTUBELINK_TextChanged(object sender, EventArgs e)
@@ -128,6 +170,26 @@ namespace C_PROJECT
         }
 
         private void TXTPRICE_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LBLSHOWUSRNAME_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LBLBALACE_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LBLUSER_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void course_upload_Load(object sender, EventArgs e)
         {
 
         }

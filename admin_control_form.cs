@@ -220,6 +220,13 @@ namespace C_PROJECT
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void BTNBACK_Click(object sender, EventArgs e)
+        {
+            LOGINFORM loginForm = new LOGINFORM();
+            this.Hide(); // Hide the current form
+            loginForm.Show(); // Show the login form
+        }
     }
         //{
         //    // Check if all required fields are filled

@@ -40,6 +40,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BTNBROWSE = new System.Windows.Forms.Button();
             this.BTNSAVE = new System.Windows.Forms.Button();
+            this.LBLBALACE = new System.Windows.Forms.Label();
+            this.LBLSHOWUSRNAME = new System.Windows.Forms.Label();
+            this.LBLUSER = new System.Windows.Forms.Label();
+            this.BTNBACK = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +58,7 @@
             // 
             // TXTYOUTUBELINK
             // 
-            this.TXTYOUTUBELINK.Location = new System.Drawing.Point(99, 182);
+            this.TXTYOUTUBELINK.Location = new System.Drawing.Point(99, 317);
             this.TXTYOUTUBELINK.Multiline = true;
             this.TXTYOUTUBELINK.Name = "TXTYOUTUBELINK";
             this.TXTYOUTUBELINK.Size = new System.Drawing.Size(307, 48);
@@ -65,7 +69,7 @@
             // 
             this.LBLYTLINK.AutoSize = true;
             this.LBLYTLINK.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLYTLINK.Location = new System.Drawing.Point(105, 150);
+            this.LBLYTLINK.Location = new System.Drawing.Point(105, 285);
             this.LBLYTLINK.Name = "LBLYTLINK";
             this.LBLYTLINK.Size = new System.Drawing.Size(104, 29);
             this.LBLYTLINK.TabIndex = 11;
@@ -75,7 +79,7 @@
             // 
             this.LBLCOURSENAME.AutoSize = true;
             this.LBLCOURSENAME.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLCOURSENAME.Location = new System.Drawing.Point(94, 46);
+            this.LBLCOURSENAME.Location = new System.Drawing.Point(94, 181);
             this.LBLCOURSENAME.Name = "LBLCOURSENAME";
             this.LBLCOURSENAME.Size = new System.Drawing.Size(194, 29);
             this.LBLCOURSENAME.TabIndex = 10;
@@ -83,7 +87,7 @@
             // 
             // TXTCOURSENAME
             // 
-            this.TXTCOURSENAME.Location = new System.Drawing.Point(101, 99);
+            this.TXTCOURSENAME.Location = new System.Drawing.Point(101, 234);
             this.TXTCOURSENAME.Multiline = true;
             this.TXTCOURSENAME.Name = "TXTCOURSENAME";
             this.TXTCOURSENAME.Size = new System.Drawing.Size(307, 48);
@@ -102,7 +106,7 @@
             // 
             this.LBLPRICE.AutoSize = true;
             this.LBLPRICE.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLPRICE.Location = new System.Drawing.Point(105, 233);
+            this.LBLPRICE.Location = new System.Drawing.Point(105, 368);
             this.LBLPRICE.Name = "LBLPRICE";
             this.LBLPRICE.Size = new System.Drawing.Size(90, 29);
             this.LBLPRICE.TabIndex = 14;
@@ -110,7 +114,7 @@
             // 
             // TXTPRICE
             // 
-            this.TXTPRICE.Location = new System.Drawing.Point(99, 274);
+            this.TXTPRICE.Location = new System.Drawing.Point(99, 409);
             this.TXTPRICE.Multiline = true;
             this.TXTPRICE.Name = "TXTPRICE";
             this.TXTPRICE.Size = new System.Drawing.Size(307, 48);
@@ -121,7 +125,7 @@
             // 
             this.LBLUPLOADIMG.AutoSize = true;
             this.LBLUPLOADIMG.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLUPLOADIMG.Location = new System.Drawing.Point(96, 334);
+            this.LBLUPLOADIMG.Location = new System.Drawing.Point(621, 78);
             this.LBLUPLOADIMG.Name = "LBLUPLOADIMG";
             this.LBLUPLOADIMG.Size = new System.Drawing.Size(203, 29);
             this.LBLUPLOADIMG.TabIndex = 16;
@@ -129,7 +133,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(529, 46);
+            this.pictureBox1.Location = new System.Drawing.Point(626, 156);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(360, 313);
             this.pictureBox1.TabIndex = 17;
@@ -138,7 +142,7 @@
             // 
             // BTNBROWSE
             // 
-            this.BTNBROWSE.Location = new System.Drawing.Point(722, 365);
+            this.BTNBROWSE.Location = new System.Drawing.Point(819, 475);
             this.BTNBROWSE.Name = "BTNBROWSE";
             this.BTNBROWSE.Size = new System.Drawing.Size(167, 74);
             this.BTNBROWSE.TabIndex = 18;
@@ -148,7 +152,7 @@
             // 
             // BTNSAVE
             // 
-            this.BTNSAVE.Location = new System.Drawing.Point(529, 365);
+            this.BTNSAVE.Location = new System.Drawing.Point(626, 475);
             this.BTNSAVE.Name = "BTNSAVE";
             this.BTNSAVE.Size = new System.Drawing.Size(167, 74);
             this.BTNSAVE.TabIndex = 19;
@@ -156,11 +160,58 @@
             this.BTNSAVE.UseVisualStyleBackColor = true;
             this.BTNSAVE.Click += new System.EventHandler(this.BTNSAVE_Click);
             // 
+            // LBLBALACE
+            // 
+            this.LBLBALACE.AutoSize = true;
+            this.LBLBALACE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBLBALACE.Location = new System.Drawing.Point(263, 81);
+            this.LBLBALACE.Name = "LBLBALACE";
+            this.LBLBALACE.Size = new System.Drawing.Size(113, 25);
+            this.LBLBALACE.TabIndex = 22;
+            this.LBLBALACE.Text = "BALANCE";
+            this.LBLBALACE.Click += new System.EventHandler(this.LBLBALACE_Click);
+            // 
+            // LBLSHOWUSRNAME
+            // 
+            this.LBLSHOWUSRNAME.AutoSize = true;
+            this.LBLSHOWUSRNAME.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBLSHOWUSRNAME.Location = new System.Drawing.Point(263, 40);
+            this.LBLSHOWUSRNAME.Name = "LBLSHOWUSRNAME";
+            this.LBLSHOWUSRNAME.Size = new System.Drawing.Size(110, 25);
+            this.LBLSHOWUSRNAME.TabIndex = 21;
+            this.LBLSHOWUSRNAME.Text = "DEFAULT";
+            this.LBLSHOWUSRNAME.Click += new System.EventHandler(this.LBLSHOWUSRNAME_Click);
+            // 
+            // LBLUSER
+            // 
+            this.LBLUSER.AutoSize = true;
+            this.LBLUSER.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBLUSER.Location = new System.Drawing.Point(96, 40);
+            this.LBLUSER.Name = "LBLUSER";
+            this.LBLUSER.Size = new System.Drawing.Size(151, 25);
+            this.LBLUSER.TabIndex = 20;
+            this.LBLUSER.Text = "USER NAME :";
+            this.LBLUSER.Click += new System.EventHandler(this.LBLUSER_Click);
+            // 
+            // BTNBACK
+            // 
+            this.BTNBACK.Location = new System.Drawing.Point(875, 607);
+            this.BTNBACK.Name = "BTNBACK";
+            this.BTNBACK.Size = new System.Drawing.Size(111, 28);
+            this.BTNBACK.TabIndex = 23;
+            this.BTNBACK.Text = "BACK";
+            this.BTNBACK.UseVisualStyleBackColor = true;
+            this.BTNBACK.Click += new System.EventHandler(this.BTNBACK_Click);
+            // 
             // course_upload
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1079, 647);
+            this.Controls.Add(this.BTNBACK);
+            this.Controls.Add(this.LBLBALACE);
+            this.Controls.Add(this.LBLSHOWUSRNAME);
+            this.Controls.Add(this.LBLUSER);
             this.Controls.Add(this.BTNSAVE);
             this.Controls.Add(this.BTNBROWSE);
             this.Controls.Add(this.pictureBox1);
@@ -175,6 +226,7 @@
             this.Controls.Add(this.BTNUPLOAD);
             this.Name = "course_upload";
             this.Text = "course_upload";
+            this.Load += new System.EventHandler(this.course_upload_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -195,5 +247,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button BTNBROWSE;
         private System.Windows.Forms.Button BTNSAVE;
+        private System.Windows.Forms.Label LBLBALACE;
+        private System.Windows.Forms.Label LBLSHOWUSRNAME;
+        private System.Windows.Forms.Label LBLUSER;
+        private System.Windows.Forms.Button BTNBACK;
     }
 }

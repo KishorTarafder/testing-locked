@@ -37,6 +37,7 @@
             this.LBLUSER = new System.Windows.Forms.Label();
             this.LBLSHOWUSRNAME = new System.Windows.Forms.Label();
             this.LBLBALACE = new System.Windows.Forms.Label();
+            this.BTNBACK = new System.Windows.Forms.Button();
             this.PNLHOLDDINGALL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PICBOX1)).BeginInit();
             this.SuspendLayout();
@@ -127,11 +128,22 @@
             this.LBLBALACE.Text = "BALANCE";
             this.LBLBALACE.Click += new System.EventHandler(this.LBLBALACE_Click);
             // 
+            // BTNBACK
+            // 
+            this.BTNBACK.Location = new System.Drawing.Point(880, 550);
+            this.BTNBACK.Name = "BTNBACK";
+            this.BTNBACK.Size = new System.Drawing.Size(152, 37);
+            this.BTNBACK.TabIndex = 18;
+            this.BTNBACK.Text = "BACK";
+            this.BTNBACK.UseVisualStyleBackColor = true;
+            this.BTNBACK.Click += new System.EventHandler(this.BTNBACK_Click);
+            // 
             // student_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1060, 599);
+            this.Controls.Add(this.BTNBACK);
             this.Controls.Add(this.PNLHOLDDINGALL);
             this.Controls.Add(this.LBLBALACE);
             this.Controls.Add(this.LBLSHOWUSRNAME);
@@ -158,5 +170,6 @@
         private System.Windows.Forms.Label LBLUSER;
         private System.Windows.Forms.Label LBLSHOWUSRNAME;
         private System.Windows.Forms.Label LBLBALACE;
+        private System.Windows.Forms.Button BTNBACK;
     }
 }
