@@ -28,18 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(student_form));
             this.FLOWLATOUTPNL = new System.Windows.Forms.FlowLayoutPanel();
-            this.PNLHOLDDINGALL = new System.Windows.Forms.Panel();
-            this.LBLVDOTITLE = new System.Windows.Forms.Label();
-            this.BTNPLAYorBUY = new System.Windows.Forms.Button();
-            this.PICBOX1 = new System.Windows.Forms.PictureBox();
             this.LBLUSER = new System.Windows.Forms.Label();
             this.LBLSHOWUSRNAME = new System.Windows.Forms.Label();
             this.LBLBALACE = new System.Windows.Forms.Label();
             this.BTNBACK = new System.Windows.Forms.Button();
-            this.PNLHOLDDINGALL.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PICBOX1)).BeginInit();
             this.SuspendLayout();
             // 
             // FLOWLATOUTPNL
@@ -50,50 +43,6 @@
             this.FLOWLATOUTPNL.Size = new System.Drawing.Size(629, 532);
             this.FLOWLATOUTPNL.TabIndex = 0;
             this.FLOWLATOUTPNL.Paint += new System.Windows.Forms.PaintEventHandler(this.FLOWLATOUTPNL_Paint);
-            // 
-            // PNLHOLDDINGALL
-            // 
-            this.PNLHOLDDINGALL.BackColor = System.Drawing.Color.Transparent;
-            this.PNLHOLDDINGALL.Controls.Add(this.LBLVDOTITLE);
-            this.PNLHOLDDINGALL.Controls.Add(this.BTNPLAYorBUY);
-            this.PNLHOLDDINGALL.Controls.Add(this.PICBOX1);
-            this.PNLHOLDDINGALL.Location = new System.Drawing.Point(0, 212);
-            this.PNLHOLDDINGALL.Name = "PNLHOLDDINGALL";
-            this.PNLHOLDDINGALL.Size = new System.Drawing.Size(349, 276);
-            this.PNLHOLDDINGALL.TabIndex = 1;
-            this.PNLHOLDDINGALL.Paint += new System.Windows.Forms.PaintEventHandler(this.PNLHOLDDINGALL_Paint);
-            // 
-            // LBLVDOTITLE
-            // 
-            this.LBLVDOTITLE.AutoSize = true;
-            this.LBLVDOTITLE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLVDOTITLE.Location = new System.Drawing.Point(4, 198);
-            this.LBLVDOTITLE.Name = "LBLVDOTITLE";
-            this.LBLVDOTITLE.Size = new System.Drawing.Size(151, 25);
-            this.LBLVDOTITLE.TabIndex = 2;
-            this.LBLVDOTITLE.Text = "VIDEO TITLE ";
-            // 
-            // BTNPLAYorBUY
-            // 
-            this.BTNPLAYorBUY.Location = new System.Drawing.Point(0, 230);
-            this.BTNPLAYorBUY.Name = "BTNPLAYorBUY";
-            this.BTNPLAYorBUY.Size = new System.Drawing.Size(349, 43);
-            this.BTNPLAYorBUY.TabIndex = 1;
-            this.BTNPLAYorBUY.Text = "PLAY";
-            this.BTNPLAYorBUY.UseVisualStyleBackColor = true;
-            this.BTNPLAYorBUY.Click += new System.EventHandler(this.BTNPLAYorBUY_Click);
-            // 
-            // PICBOX1
-            // 
-            this.PICBOX1.BackColor = System.Drawing.Color.Transparent;
-            this.PICBOX1.ErrorImage = null;
-            this.PICBOX1.InitialImage = ((System.Drawing.Image)(resources.GetObject("PICBOX1.InitialImage")));
-            this.PICBOX1.Location = new System.Drawing.Point(0, 4);
-            this.PICBOX1.Name = "PICBOX1";
-            this.PICBOX1.Size = new System.Drawing.Size(346, 191);
-            this.PICBOX1.TabIndex = 0;
-            this.PICBOX1.TabStop = false;
-            this.PICBOX1.Click += new System.EventHandler(this.PICBOX1_Click);
             // 
             // LBLUSER
             // 
@@ -144,7 +93,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1060, 599);
             this.Controls.Add(this.BTNBACK);
-            this.Controls.Add(this.PNLHOLDDINGALL);
             this.Controls.Add(this.LBLBALACE);
             this.Controls.Add(this.LBLSHOWUSRNAME);
             this.Controls.Add(this.LBLUSER);
@@ -152,9 +100,6 @@
             this.Name = "student_form";
             this.Text = "student_form";
             this.Load += new System.EventHandler(this.student_form_Load);
-            this.PNLHOLDDINGALL.ResumeLayout(false);
-            this.PNLHOLDDINGALL.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PICBOX1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,10 +108,6 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel FLOWLATOUTPNL;
-        private System.Windows.Forms.Panel PNLHOLDDINGALL;
-        private System.Windows.Forms.PictureBox PICBOX1;
-        private System.Windows.Forms.Button BTNPLAYorBUY;
-        private System.Windows.Forms.Label LBLVDOTITLE;
         private System.Windows.Forms.Label LBLUSER;
         private System.Windows.Forms.Label LBLSHOWUSRNAME;
         private System.Windows.Forms.Label LBLBALACE;

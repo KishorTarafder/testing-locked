@@ -45,6 +45,7 @@
             this.BTNUPDATE = new System.Windows.Forms.Button();
             this.BTNADD = new System.Windows.Forms.Button();
             this.BTNBACK = new System.Windows.Forms.Button();
+            this.BTNSHOWCOURSE = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GRIDVIEWSHOWALL)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,9 +73,9 @@
             // 
             // BTNSEARCH
             // 
-            this.BTNSEARCH.Location = new System.Drawing.Point(1112, 12);
+            this.BTNSEARCH.Location = new System.Drawing.Point(1112, 37);
             this.BTNSEARCH.Name = "BTNSEARCH";
-            this.BTNSEARCH.Size = new System.Drawing.Size(213, 56);
+            this.BTNSEARCH.Size = new System.Drawing.Size(213, 48);
             this.BTNSEARCH.TabIndex = 2;
             this.BTNSEARCH.Text = "SEARCH";
             this.BTNSEARCH.UseVisualStyleBackColor = true;
@@ -82,7 +83,7 @@
             // 
             // TXTSEARCH
             // 
-            this.TXTSEARCH.Location = new System.Drawing.Point(515, 20);
+            this.TXTSEARCH.Location = new System.Drawing.Point(799, 37);
             this.TXTSEARCH.Multiline = true;
             this.TXTSEARCH.Name = "TXTSEARCH";
             this.TXTSEARCH.Size = new System.Drawing.Size(307, 48);
@@ -189,7 +190,7 @@
             // 
             this.BTNUPDATE.Location = new System.Drawing.Point(12, 626);
             this.BTNUPDATE.Name = "BTNUPDATE";
-            this.BTNUPDATE.Size = new System.Drawing.Size(213, 56);
+            this.BTNUPDATE.Size = new System.Drawing.Size(184, 56);
             this.BTNUPDATE.TabIndex = 15;
             this.BTNUPDATE.Text = "UPDATE";
             this.BTNUPDATE.UseVisualStyleBackColor = true;
@@ -198,7 +199,7 @@
             // BTNADD
             // 
             this.BTNADD.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.BTNADD.Location = new System.Drawing.Point(285, 20);
+            this.BTNADD.Location = new System.Drawing.Point(262, 462);
             this.BTNADD.Name = "BTNADD";
             this.BTNADD.Size = new System.Drawing.Size(213, 56);
             this.BTNADD.TabIndex = 16;
@@ -216,11 +217,22 @@
             this.BTNBACK.UseVisualStyleBackColor = true;
             this.BTNBACK.Click += new System.EventHandler(this.BTNBACK_Click);
             // 
+            // BTNSHOWCOURSE
+            // 
+            this.BTNSHOWCOURSE.Location = new System.Drawing.Point(515, 37);
+            this.BTNSHOWCOURSE.Name = "BTNSHOWCOURSE";
+            this.BTNSHOWCOURSE.Size = new System.Drawing.Size(213, 48);
+            this.BTNSHOWCOURSE.TabIndex = 18;
+            this.BTNSHOWCOURSE.Text = "EXIT";
+            this.BTNSHOWCOURSE.UseVisualStyleBackColor = true;
+            this.BTNSHOWCOURSE.Click += new System.EventHandler(this.BTNSHOWCOURSE_Click);
+            // 
             // admin_control_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1337, 694);
+            this.Controls.Add(this.BTNSHOWCOURSE);
             this.Controls.Add(this.BTNBACK);
             this.Controls.Add(this.BTNADD);
             this.Controls.Add(this.BTNUPDATE);
@@ -265,5 +277,6 @@
         private System.Windows.Forms.Button BTNUPDATE;
         private System.Windows.Forms.Button BTNADD;
         private System.Windows.Forms.Button BTNBACK;
+        private System.Windows.Forms.Button BTNSHOWCOURSE;
     }
 }

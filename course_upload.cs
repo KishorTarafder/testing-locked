@@ -93,6 +93,25 @@ namespace C_PROJECT
 
         private void BTNSAVE_Click(object sender, EventArgs e)
         {
+            // Check if user is logged in
+            if (string.IsNullOrEmpty(username))
+            {
+                MessageBox.Show("You must be logged in to upload a course!", "Login Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validate required fields
+            if (string.IsNullOrEmpty(TXTCOURSENAME.Text))
+            {
+                MessageBox.Show("Please enter a course name!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(TXTPRICE.Text))
+            {
+                MessageBox.Show("Please enter a price!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             //...............convert korsi binary teh 
 
@@ -127,12 +146,21 @@ namespace C_PROJECT
 
 
                 conn.Open();
-                string sql = "INSERT INTO COURSES (TITLE, THUMBNAIL, YOUTUBEID,PRICE) VALUES (@TITLE, @THUMBNAIL, @YOUTUBEID,@PRICE)";
+                string sql = "INSERT INTO COURSES (TITLE, THUMBNAIL, YOUTUBEID, PRICE, ADDEDBY) VALUES (@TITLE, @THUMBNAIL, @YOUTUBEID, @PRICE, @ADDEDBY)";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@TITLE", TXTCOURSENAME.Text);            // Course name
                 cmd.Parameters.AddWithValue("@THUMBNAIL", imageData);                 // Image
                 cmd.Parameters.AddWithValue("@YOUTUBEID", TXTYOUTUBELINK.Text);
                 cmd.Parameters.AddWithValue("@PRICE", TXTPRICE.Text);
+                // Add the username who uploaded the course - simple way!
+                if (username == null || username == "")
+                {
+                    cmd.Parameters.AddWithValue("@ADDEDBY", "Unknown");
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@ADDEDBY", username);
+                }
 
 
 
@@ -191,7 +219,7 @@ namespace C_PROJECT
 
         private void course_upload_Load(object sender, EventArgs e)
         {
-
+            ShowUserInfo(); // Display user information when form loads
         }
 
         private void BTNBACK_Click(object sender, EventArgs e)

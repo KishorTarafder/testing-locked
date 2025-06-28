@@ -227,6 +227,13 @@ namespace C_PROJECT
             this.Hide(); // Hide the current form
             loginForm.Show(); // Show the login form
         }
+
+        private void BTNSHOWCOURSE_Click(object sender, EventArgs e)
+        {
+            //showcourse_form showCourseForm = new showcourse_form();
+            //this.Hide();
+            this.Close(); // Close the current form
+        }
     }
         //{
         //    // Check if all required fields are filled

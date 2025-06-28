@@ -30,14 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LOGINFORM));
             this.BTNLOGIN = new System.Windows.Forms.Button();
-            this.LBLLOGIN = new System.Windows.Forms.Label();
             this.TXTUSERNAME = new System.Windows.Forms.TextBox();
             this.LBLUSERNAME = new System.Windows.Forms.Label();
             this.LBLPASSWORD = new System.Windows.Forms.Label();
             this.TXTPASSWORD = new System.Windows.Forms.TextBox();
             this.BTNSIGNUP = new System.Windows.Forms.Button();
             this.BTNFORGOTPASS = new System.Windows.Forms.Button();
-            this.BTNTESTADMIN = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BTNLOGIN
@@ -50,17 +48,6 @@
             this.BTNLOGIN.Text = "LOGIN";
             this.BTNLOGIN.UseVisualStyleBackColor = true;
             this.BTNLOGIN.Click += new System.EventHandler(this.BTNLOGIN_Click);
-            // 
-            // LBLLOGIN
-            // 
-            this.LBLLOGIN.AutoSize = true;
-            this.LBLLOGIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLLOGIN.Location = new System.Drawing.Point(684, 257);
-            this.LBLLOGIN.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LBLLOGIN.Name = "LBLLOGIN";
-            this.LBLLOGIN.Size = new System.Drawing.Size(124, 38);
-            this.LBLLOGIN.TabIndex = 2;
-            this.LBLLOGIN.Text = "LOGIN";
             // 
             // TXTUSERNAME
             // 
@@ -140,17 +127,6 @@
             this.BTNFORGOTPASS.UseVisualStyleBackColor = false;
             this.BTNFORGOTPASS.Click += new System.EventHandler(this.BTNFORGOTPASS_Click);
             // 
-            // BTNTESTADMIN
-            // 
-            this.BTNTESTADMIN.Location = new System.Drawing.Point(767, 546);
-            this.BTNTESTADMIN.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.BTNTESTADMIN.Name = "BTNTESTADMIN";
-            this.BTNTESTADMIN.Size = new System.Drawing.Size(188, 74);
-            this.BTNTESTADMIN.TabIndex = 9;
-            this.BTNTESTADMIN.Text = "TESTADMIN";
-            this.BTNTESTADMIN.UseVisualStyleBackColor = true;
-            this.BTNTESTADMIN.Click += new System.EventHandler(this.BTNTESTADMIN_Click);
-            // 
             // LOGINFORM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
@@ -159,14 +135,12 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(982, 625);
-            this.Controls.Add(this.BTNTESTADMIN);
             this.Controls.Add(this.BTNFORGOTPASS);
             this.Controls.Add(this.BTNSIGNUP);
             this.Controls.Add(this.TXTPASSWORD);
             this.Controls.Add(this.LBLPASSWORD);
             this.Controls.Add(this.LBLUSERNAME);
             this.Controls.Add(this.TXTUSERNAME);
-            this.Controls.Add(this.LBLLOGIN);
             this.Controls.Add(this.BTNLOGIN);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -183,14 +157,12 @@
 
         #endregion
         private System.Windows.Forms.Button BTNLOGIN;
-        private System.Windows.Forms.Label LBLLOGIN;
         private System.Windows.Forms.TextBox TXTUSERNAME;
         private System.Windows.Forms.Label LBLUSERNAME;
         private System.Windows.Forms.Label LBLPASSWORD;
         private System.Windows.Forms.TextBox TXTPASSWORD;
         private System.Windows.Forms.Button BTNSIGNUP;
         private System.Windows.Forms.Button BTNFORGOTPASS;
-        private System.Windows.Forms.Button BTNTESTADMIN;
     }
 }
 

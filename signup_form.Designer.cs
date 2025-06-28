@@ -29,32 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(signup_form));
-            this.LBLLOGIN = new System.Windows.Forms.Label();
             this.TXTPASSWORD = new System.Windows.Forms.TextBox();
             this.LBLPASSWORD = new System.Windows.Forms.Label();
             this.LBLUSERNAME = new System.Windows.Forms.Label();
             this.TXTUSERNAME = new System.Windows.Forms.TextBox();
             this.LBLUSERROLE = new System.Windows.Forms.Label();
-            this.LBLNAME = new System.Windows.Forms.Label();
-            this.TXTNAME = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.BTNSIGNUP = new System.Windows.Forms.Button();
             this.BTNGOBACK = new System.Windows.Forms.Button();
             this.LBLCONFIRM = new System.Windows.Forms.Label();
             this.TXTCONFIRMPASS = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // LBLLOGIN
-            // 
-            this.LBLLOGIN.AutoSize = true;
-            this.LBLLOGIN.BackColor = System.Drawing.SystemColors.Window;
-            this.LBLLOGIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLLOGIN.Location = new System.Drawing.Point(892, 53);
-            this.LBLLOGIN.Name = "LBLLOGIN";
-            this.LBLLOGIN.Size = new System.Drawing.Size(149, 38);
-            this.LBLLOGIN.TabIndex = 3;
-            this.LBLLOGIN.Text = "SIGNUP";
-            this.LBLLOGIN.Click += new System.EventHandler(this.LBLLOGIN_Click);
             // 
             // TXTPASSWORD
             // 
@@ -111,25 +96,6 @@
             this.LBLUSERROLE.Size = new System.Drawing.Size(115, 20);
             this.LBLUSERROLE.TabIndex = 11;
             this.LBLUSERROLE.Text = "USER ROLE";
-            // 
-            // LBLNAME
-            // 
-            this.LBLNAME.AutoSize = true;
-            this.LBLNAME.BackColor = System.Drawing.SystemColors.Window;
-            this.LBLNAME.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLNAME.Location = new System.Drawing.Point(595, 188);
-            this.LBLNAME.Name = "LBLNAME";
-            this.LBLNAME.Size = new System.Drawing.Size(116, 38);
-            this.LBLNAME.TabIndex = 13;
-            this.LBLNAME.Text = "NAME";
-            // 
-            // TXTNAME
-            // 
-            this.TXTNAME.Location = new System.Drawing.Point(602, 256);
-            this.TXTNAME.Multiline = true;
-            this.TXTNAME.Name = "TXTNAME";
-            this.TXTNAME.Size = new System.Drawing.Size(307, 48);
-            this.TXTNAME.TabIndex = 14;
             // 
             // comboBox1
             // 
@@ -204,14 +170,11 @@
             this.Controls.Add(this.BTNGOBACK);
             this.Controls.Add(this.BTNSIGNUP);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.TXTNAME);
-            this.Controls.Add(this.LBLNAME);
             this.Controls.Add(this.LBLUSERROLE);
             this.Controls.Add(this.TXTPASSWORD);
             this.Controls.Add(this.LBLPASSWORD);
             this.Controls.Add(this.LBLUSERNAME);
             this.Controls.Add(this.TXTUSERNAME);
-            this.Controls.Add(this.LBLLOGIN);
             this.Name = "signup_form";
             this.Text = "signup_form";
             this.ResumeLayout(false);
@@ -220,15 +183,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label LBLLOGIN;
         private System.Windows.Forms.TextBox TXTPASSWORD;
         private System.Windows.Forms.Label LBLPASSWORD;
         private System.Windows.Forms.Label LBLUSERNAME;
         private System.Windows.Forms.TextBox TXTUSERNAME;
         private System.Windows.Forms.Label LBLUSERROLE;
-        private System.Windows.Forms.Label LBLNAME;
-        private System.Windows.Forms.TextBox TXTNAME;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button BTNSIGNUP;
         private System.Windows.Forms.Button BTNGOBACK;
