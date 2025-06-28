@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.BTNCHANGEPASS = new System.Windows.Forms.Button();
-            this.TXTOLDPASS = new System.Windows.Forms.TextBox();
+            this.TXTEMAIL = new System.Windows.Forms.TextBox();
             this.LBLPASSWORD = new System.Windows.Forms.Label();
             this.LBLUSERNAME = new System.Windows.Forms.Label();
             this.TXTUSERNAME = new System.Windows.Forms.TextBox();
             this.LBLNEWPASS = new System.Windows.Forms.Label();
-            this.NEWPASS = new System.Windows.Forms.TextBox();
+            this.NEWPASS_CHANGE = new System.Windows.Forms.TextBox();
             this.LBLCHANGEPASS = new System.Windows.Forms.Label();
             this.BTNBACK = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -49,14 +49,14 @@
             this.BTNCHANGEPASS.UseVisualStyleBackColor = true;
             this.BTNCHANGEPASS.Click += new System.EventHandler(this.BTNCHANGEPASS_Click);
             // 
-            // TXTOLDPASS
+            // TXTEMAIL
             // 
-            this.TXTOLDPASS.Location = new System.Drawing.Point(103, 295);
-            this.TXTOLDPASS.Multiline = true;
-            this.TXTOLDPASS.Name = "TXTOLDPASS";
-            this.TXTOLDPASS.Size = new System.Drawing.Size(376, 48);
-            this.TXTOLDPASS.TabIndex = 20;
-            this.TXTOLDPASS.TextChanged += new System.EventHandler(this.TXTOLDPASS_TextChanged);
+            this.TXTEMAIL.Location = new System.Drawing.Point(103, 295);
+            this.TXTEMAIL.Multiline = true;
+            this.TXTEMAIL.Name = "TXTEMAIL";
+            this.TXTEMAIL.Size = new System.Drawing.Size(376, 48);
+            this.TXTEMAIL.TabIndex = 20;
+            this.TXTEMAIL.TextChanged += new System.EventHandler(this.TXTOLDPASS_TextChanged);
             // 
             // LBLPASSWORD
             // 
@@ -64,9 +64,9 @@
             this.LBLPASSWORD.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBLPASSWORD.Location = new System.Drawing.Point(101, 232);
             this.LBLPASSWORD.Name = "LBLPASSWORD";
-            this.LBLPASSWORD.Size = new System.Drawing.Size(309, 38);
+            this.LBLPASSWORD.Size = new System.Drawing.Size(119, 38);
             this.LBLPASSWORD.TabIndex = 19;
-            this.LBLPASSWORD.Text = "OLD PASSWORD ";
+            this.LBLPASSWORD.Text = "EMAIL";
             this.LBLPASSWORD.Click += new System.EventHandler(this.LBLPASSWORD_Click);
             // 
             // LBLUSERNAME
@@ -97,15 +97,16 @@
             this.LBLNEWPASS.Size = new System.Drawing.Size(308, 38);
             this.LBLNEWPASS.TabIndex = 22;
             this.LBLNEWPASS.Text = "NEW PASSWORD";
+            this.LBLNEWPASS.Click += new System.EventHandler(this.LBLNEWPASS_Click);
             // 
-            // NEWPASS
+            // NEWPASS_CHANGE
             // 
-            this.NEWPASS.Location = new System.Drawing.Point(109, 454);
-            this.NEWPASS.Multiline = true;
-            this.NEWPASS.Name = "NEWPASS";
-            this.NEWPASS.Size = new System.Drawing.Size(370, 48);
-            this.NEWPASS.TabIndex = 23;
-            this.NEWPASS.TextChanged += new System.EventHandler(this.NEWPASS_TextChanged);
+            this.NEWPASS_CHANGE.Location = new System.Drawing.Point(109, 454);
+            this.NEWPASS_CHANGE.Multiline = true;
+            this.NEWPASS_CHANGE.Name = "NEWPASS_CHANGE";
+            this.NEWPASS_CHANGE.Size = new System.Drawing.Size(370, 48);
+            this.NEWPASS_CHANGE.TabIndex = 23;
+            this.NEWPASS_CHANGE.TextChanged += new System.EventHandler(this.NEWPASS_TextChanged);
             // 
             // LBLCHANGEPASS
             // 
@@ -134,10 +135,10 @@
             this.ClientSize = new System.Drawing.Size(1095, 666);
             this.Controls.Add(this.BTNBACK);
             this.Controls.Add(this.LBLCHANGEPASS);
-            this.Controls.Add(this.NEWPASS);
+            this.Controls.Add(this.NEWPASS_CHANGE);
             this.Controls.Add(this.LBLNEWPASS);
             this.Controls.Add(this.BTNCHANGEPASS);
-            this.Controls.Add(this.TXTOLDPASS);
+            this.Controls.Add(this.TXTEMAIL);
             this.Controls.Add(this.LBLPASSWORD);
             this.Controls.Add(this.LBLUSERNAME);
             this.Controls.Add(this.TXTUSERNAME);
@@ -151,12 +152,12 @@
         #endregion
 
         private System.Windows.Forms.Button BTNCHANGEPASS;
-        private System.Windows.Forms.TextBox TXTOLDPASS;
+        private System.Windows.Forms.TextBox TXTEMAIL;
         private System.Windows.Forms.Label LBLPASSWORD;
         private System.Windows.Forms.Label LBLUSERNAME;
         private System.Windows.Forms.TextBox TXTUSERNAME;
         private System.Windows.Forms.Label LBLNEWPASS;
-        private System.Windows.Forms.TextBox NEWPASS;
+        private System.Windows.Forms.TextBox NEWPASS_CHANGE;
         private System.Windows.Forms.Label LBLCHANGEPASS;
         private System.Windows.Forms.Button BTNBACK;
     }

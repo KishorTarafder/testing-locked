@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(signup_form));
             this.TXTPASSWORD = new System.Windows.Forms.TextBox();
             this.LBLPASSWORD = new System.Windows.Forms.Label();
             this.LBLUSERNAME = new System.Windows.Forms.Label();
@@ -39,6 +38,8 @@
             this.BTNGOBACK = new System.Windows.Forms.Button();
             this.LBLCONFIRM = new System.Windows.Forms.Label();
             this.TXTCONFIRMPASS = new System.Windows.Forms.TextBox();
+            this.TXTEMAIL = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // TXTPASSWORD
@@ -157,14 +158,39 @@
             this.TXTCONFIRMPASS.TabIndex = 19;
             this.TXTCONFIRMPASS.TextChanged += new System.EventHandler(this.TXTCONFIRMPASS_TextChanged);
             // 
+            // TXTEMAIL
+            // 
+            this.TXTEMAIL.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.TXTEMAIL.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TXTEMAIL.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXTEMAIL.Location = new System.Drawing.Point(645, 232);
+            this.TXTEMAIL.Multiline = true;
+            this.TXTEMAIL.Name = "TXTEMAIL";
+            this.TXTEMAIL.Size = new System.Drawing.Size(325, 31);
+            this.TXTEMAIL.TabIndex = 20;
+            this.TXTEMAIL.TextChanged += new System.EventHandler(this.TXTEMAIL_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(795, 176);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 25);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "EMAIL";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
             // signup_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(982, 663);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.TXTEMAIL);
             this.Controls.Add(this.TXTCONFIRMPASS);
             this.Controls.Add(this.LBLCONFIRM);
             this.Controls.Add(this.BTNGOBACK);
@@ -193,5 +219,7 @@
         private System.Windows.Forms.Button BTNGOBACK;
         private System.Windows.Forms.Label LBLCONFIRM;
         private System.Windows.Forms.TextBox TXTCONFIRMPASS;
+        private System.Windows.Forms.TextBox TXTEMAIL;
+        private System.Windows.Forms.Label label1;
     }
 }

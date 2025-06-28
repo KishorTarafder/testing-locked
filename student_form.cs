@@ -182,6 +182,8 @@ namespace C_PROJECT
                     pic.Width = 160; pic.Height = 100; pic.Top = 5; pic.Left = 10; pic.SizeMode = PictureBoxSizeMode.StretchImage;
                     if (!(reader["THUMBNAIL"] is DBNull))
                     {
+
+                        // opencv  teh jmne use hoisilo  
                         byte[] imgBytes = (byte[])reader["THUMBNAIL"];
                         using (MemoryStream ms = new MemoryStream(imgBytes))
                         {

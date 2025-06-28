@@ -13,8 +13,8 @@ namespace C_PROJECT
     {
 
 
-        // Updated connection string to work on any PC with SQL Server Express
-        private static readonly string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=DBLOGIN;Integrated Security=True;Connect Timeout=30;";
+        
+        private static readonly string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=DBLOGIN;Integrated Security=True;";
 
         // Public property to access the connection string from other classes
         public static string ConnectionString 
