@@ -64,6 +64,20 @@ namespace C_PROJECT
 
         private void BTNSIGNUP_Click(object sender, EventArgs e)
         {
+
+            if (!TXTEMAIL.Text.Contains("@"))
+            {
+                MessageBox.Show("EMAIL must contain '@'.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+
+
+
+
+
+
             // Check if all fields are filled
             if (string.IsNullOrEmpty(TXTUSERNAME.Text) ||
                 string.IsNullOrEmpty(TXTPASSWORD.Text) ||

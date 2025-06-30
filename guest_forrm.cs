@@ -12,129 +12,197 @@ namespace C_PROJECT
         public guest_forrm()
         {
             InitializeComponent();
-            // Make sure the event is hooked up (in case you didn't do it in Designer)
+            
+            // When user types in search box, search for courses
             TXTSEARCH.TextChanged += TXTSEARCH_TextChanged;
-            this.Load += guest_Load; // Form load event
+            
+            // When form opens, show all courses
+            this.Load += guest_Load;
         }
 
-        // Show all courses or filtered courses (by search term)
-        private void ShowCoursesInFlowPanel(string searchTerm)
+        // This method shows courses on the screen
+        // If user searches, it shows only matching courses
+        private void ShowCoursesInFlowPanel(string searchText)
         {
-            FLOWLATOUTPNL.Controls.Clear(); // Clear old course cards
+            // Step 1: Clear any old course cards from screen
+            FLOWLATOUTPNL.Controls.Clear();
 
-            // Using centralized connection string from DBConnection
-            string sql = "SELECT ID, TITLE, PRICE, THUMBNAIL FROM COURSES";
+            // Step 2: Get course data from database (super simple way!)
+            DataTable courseData = GetCoursesFromDatabase(searchText);
 
-            if (!string.IsNullOrEmpty(searchTerm))
-                sql += " WHERE TITLE LIKE @search";
-
-            using (SqlConnection conn = DBConnection.GetConnection())
+            // Step 3: Create visual cards for each course
+            foreach (DataRow course in courseData.Rows)
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(sql, conn);
+                // Create a card (box) for this course
+                Panel courseCard = CreateCourseCard();
+                
+                // Add course image to card
+                PictureBox courseImage = CreateCourseImage(course);
+                
+                // Add course title to card
+                Label courseTitle = CreateCourseTitle(course);
+                
+                // Add course price to card
+                Label coursePrice = CreateCoursePrice(course);
+                
+                // Add "Get Access" button to card
+                Button accessButton = CreateAccessButton();
 
-                if (!string.IsNullOrEmpty(searchTerm))
-                    cmd.Parameters.AddWithValue("@search", "%" + searchTerm + "%");
-
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    // Build the course card
-                    Panel card = new Panel
-                    {
-                        Width = 180,
-                        Height = 220,
-                        Margin = new Padding(10),
-                        BorderStyle = BorderStyle.FixedSingle
-                    };
-
-                    // Thumbnail
-                    PictureBox pic = new PictureBox
-                    {
-                        Width = 160,
-                        Height = 100,
-                        Top = 5,
-                        Left = 10,
-                        SizeMode = PictureBoxSizeMode.StretchImage
-                    };
-                    if (!(reader["THUMBNAIL"] is DBNull))
-                    {
-                        byte[] imgBytes = (byte[])reader["THUMBNAIL"];
-                        using (MemoryStream ms = new MemoryStream(imgBytes))
-                        {
-                            pic.Image = Image.FromStream(ms);
-                        }
-                    }
-
-                    // Title
-                    Label lblTitle = new Label
-                    {
-                        Text = reader["TITLE"].ToString(),
-                        Top = 110,
-                        Left = 10,
-                        Width = 160,
-                        Font = new Font("Segoe UI", 10, FontStyle.Bold)
-                    };
-
-                    // Price
-                    Label lblPrice = new Label
-                    {
-                        Text = "Price: " + reader["PRICE"].ToString() + " points",
-                        Top = 140,
-                        Left = 10,
-                        Width = 160
-                    };
-
-                    // Access button
-                    Button btnGetAccess = new Button
-                    {
-                        Text = "Get Access",
-                        Top = 170,
-                        Left = 10,
-                        Width = 160,
-                        BackColor = Color.Orange,
-                        ForeColor = Color.White
-                    };
-                    btnGetAccess.Click += (s, ev) =>
-                    {
-                        MessageBox.Show("Please login to access this course.", "Login Required", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    };
-
-                    // Add to card and to panel
-                    card.Controls.Add(pic);
-                    card.Controls.Add(lblTitle);
-                    card.Controls.Add(lblPrice);
-                    card.Controls.Add(btnGetAccess);
-                    FLOWLATOUTPNL.Controls.Add(card);
-                }
-
-                conn.Close();
+                // Put all parts into the course card
+                courseCard.Controls.Add(courseImage);
+                courseCard.Controls.Add(courseTitle);
+                courseCard.Controls.Add(coursePrice);
+                courseCard.Controls.Add(accessButton);
+                
+                // Add the complete course card to main panel
+                FLOWLATOUTPNL.Controls.Add(courseCard);
             }
         }
 
-        // Live search: update when you type
+        // Create the main card (box) that holds course info
+        private Panel CreateCourseCard()
+        {
+            Panel card = new Panel();
+            card.Width = 180;           // Card width in pixels
+            card.Height = 220;          // Card height in pixels
+            card.Margin = new Padding(10);  // Space around card
+            card.BorderStyle = BorderStyle.FixedSingle;  // Draw border around card
+            return card;
+        }
+
+        // Create and setup the course image
+        private PictureBox CreateCourseImage(DataRow course)
+        {
+            PictureBox image = new PictureBox();
+            image.Width = 160;          // Image width
+            image.Height = 100;         // Image height
+            image.Top = 5;              // Position from top of card
+            image.Left = 10;            // Position from left of card
+            image.SizeMode = PictureBoxSizeMode.StretchImage;  // Fit image in box
+
+            // Check if course has an image in database
+            if (!(course["THUMBNAIL"] is DBNull))
+            {
+                // Get image data from database (stored as bytes)
+                byte[] imageBytes = (byte[])course["THUMBNAIL"];
+                
+                // Convert bytes to actual image
+                using (MemoryStream imageStream = new MemoryStream(imageBytes))
+                {
+                    image.Image = Image.FromStream(imageStream);
+                }
+            }
+            
+            return image;
+        }
+
+        // Create and setup the course title text
+        private Label CreateCourseTitle(DataRow course)
+        {
+            Label title = new Label();
+            title.Text = course["TITLE"].ToString();  // Get title from database
+            title.Top = 110;            // Position from top of card
+            title.Left = 10;            // Position from left of card
+            title.Width = 160;          // Label width
+            title.Font = new Font("Segoe UI", 10, FontStyle.Bold);  // Make text bold
+            return title;
+        }
+
+        // Create and setup the course price text
+        private Label CreateCoursePrice(DataRow course)
+        {
+            Label price = new Label();
+            string priceText = "Price: " + course["PRICE"].ToString() + " points";
+            price.Text = priceText;     // Show price with "points" word
+            price.Top = 140;            // Position from top of card
+            price.Left = 10;            // Position from left of card  
+            price.Width = 160;          // Label width
+            return price;
+        }
+
+        // Create the "Get Access" button
+        private Button CreateAccessButton()
+        {
+            Button button = new Button();
+            button.Text = "Get Access";
+            button.Top = 170;           // Position from top of card
+            button.Left = 10;           // Position from left of card
+            button.Width = 160;         // Button width
+            button.BackColor = Color.Orange;  // Orange background
+            button.ForeColor = Color.White;   // White text
+            
+            // When user clicks button, show message
+            button.Click += AccessButton_Click;
+            
+            return button;
+        }
+
+        // What happens when user clicks "Get Access" button
+        private void AccessButton_Click(object sender, EventArgs e)
+        {
+            string message = "Please login to access this course.";
+            string title = "Login Required";
+            MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        // When user types in search box, search for courses
         private void TXTSEARCH_TextChanged(object sender, EventArgs e)
         {
-            ShowCoursesInFlowPanel(TXTSEARCH.Text.Trim());
+            string searchText = TXTSEARCH.Text.Trim();  // Get text and remove spaces
+            ShowCoursesInFlowPanel(searchText);         // Show matching courses
         }
 
-        // On form load, show all courses
+        // When form first opens, show all courses
         private void guest_Load(object sender, EventArgs e)
         {
-            ShowCoursesInFlowPanel(TXTSEARCH.Text.Trim());
+            string searchText = TXTSEARCH.Text.Trim();  // Get any text in search box
+            ShowCoursesInFlowPanel(searchText);         // Show courses
         }
 
+        // This method exists but doesn't do anything (can be ignored)
         private void FLOWLATOUTPNL_Paint(object sender, PaintEventArgs e)
         {
-
+            // Empty - this is normal, just leave it
         }
 
+        // When user clicks "Back" button, go to login form
         private void BTNBACK_Click(object sender, EventArgs e)
         {
+            // Create new login form
             LOGINFORM loginForm = new LOGINFORM();
-            this.Hide(); // Hide the current form
-            loginForm.Show(); // Show the login form
+            
+            // Hide this guest form
+            this.Hide();
+            
+            // Show the login form
+            loginForm.Show();
+        }
+
+        // SUPER SIMPLE DATABASE METHOD - no complex security stuff!
+        private DataTable GetCoursesFromDatabase(string searchText)
+        {
+            string sql;
+            
+            if (string.IsNullOrEmpty(searchText))
+            {
+                // No search - show all courses
+                sql = "SELECT ID, TITLE, PRICE, THUMBNAIL FROM COURSES";
+            }
+            else
+            {
+                // Simple search - just add the text directly!
+                sql = "SELECT ID, TITLE, PRICE, THUMBNAIL FROM COURSES WHERE TITLE LIKE '%" + searchText + "%'";
+            }
+
+            // Get data from database (easy way!)
+            using (SqlConnection databaseConnection = DBConnection.GetConnection())
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, databaseConnection);
+                DataTable results = new DataTable();
+                adapter.Fill(results); // This handles Open/Close automatically!
+                
+                return results;
+            }
         }
     }
 }

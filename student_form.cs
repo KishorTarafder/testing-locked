@@ -61,8 +61,8 @@ namespace C_PROJECT
                 int bal = Convert.ToInt32(dt.Rows[0]["Balance"]);
 
                 // Show in your labels
-                LBLSHOWUSRNAME.Text = $"Welcome, {user}!";
-                LBLBALACE.Text = $"Balance: {bal}";
+                LBLSHOWUSRNAME.Text = $"  {user}   !";
+                LBLBALACE.Text = $"    {bal}";
             }
             else
             {
@@ -153,12 +153,18 @@ namespace C_PROJECT
         //    }
         //}
 
-        private void ShowAllCoursesInFlowPanel()
+        private void ShowAllCoursesInFlowPanel(string searchText = "")
         {
             FLOWLATOUTPNL.Controls.Clear(); // Remove old cards
 
             // Using centralized connection string from DBConnection
             string sql = "SELECT ID, TITLE, PRICE, YOUTUBEID, THUMBNAIL FROM COURSES";
+            
+            // If there's search text, add WHERE clause
+            if (!string.IsNullOrEmpty(searchText))
+            {
+                sql += $" WHERE TITLE LIKE '%{searchText}%'";
+            }
 
             using (SqlConnection conn = DBConnection.GetConnection())
             {
@@ -166,8 +172,11 @@ namespace C_PROJECT
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataReader reader = cmd.ExecuteReader();
 
+                bool foundResults = false;
+
                 while (reader.Read())
                 {
+                    foundResults = true;
                     int courseId = Convert.ToInt32(reader["ID"]); // Get course ID
 
                     // Create a panel to hold image + info
@@ -199,31 +208,28 @@ namespace C_PROJECT
 
                     // Price
                     Label lblPrice = new Label();
-                    lblPrice.Text = "Price: " + reader["PRICE"].ToString() + " points";
+                    lblPrice.Text = "Price: " + reader["PRICE"].ToString();
                     lblPrice.Top = 140; lblPrice.Left = 10; lblPrice.Width = 160;
 
-                    // Check if user already bought this course
+                    // Check if user has purchased this course
                     bool hasPurchased = HasUserPurchasedCourse(courseId);
 
-                    // Smart Buy/Play button
                     Button btnAction = new Button();
                     btnAction.Top = 170; btnAction.Left = 10; btnAction.Width = 160;
 
-                    if (hasPurchased) // If user owns the course
+                    if (hasPurchased)
                     {
                         btnAction.Text = "PLAY";
                         btnAction.BackColor = Color.Green;
-                        btnAction.ForeColor = Color.White;
                         string yt = reader["YOUTUBEID"].ToString();
-                        btnAction.Click += (s, ev) => {
-                            System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=" + yt);
+                        btnAction.Click += (s, ev) => { 
+                            System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=" + yt); 
                         };
                     }
-                    else // If user doesn't own the course
+                    else
                     {
                         btnAction.Text = "BUY";
                         btnAction.BackColor = Color.Orange;
-                        btnAction.ForeColor = Color.White;
                         int price = Convert.ToInt32(reader["PRICE"]);
                         string title = reader["TITLE"].ToString();
                         string yt = reader["YOUTUBEID"].ToString();
@@ -240,6 +246,17 @@ namespace C_PROJECT
 
                     // Add card to the FlowLayoutPanel
                     FLOWLATOUTPNL.Controls.Add(card);
+                }
+                
+                // Show message if no results found during search
+                if (!foundResults && !string.IsNullOrEmpty(searchText))
+                {
+                    Label noResultsLabel = new Label();
+                    noResultsLabel.Text = $"No courses found for '{searchText}'";
+                    noResultsLabel.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+                    noResultsLabel.ForeColor = Color.White;
+                    noResultsLabel.AutoSize = true;
+                    FLOWLATOUTPNL.Controls.Add(noResultsLabel);
                 }
                 
                 conn.Close();
@@ -415,6 +432,12 @@ namespace C_PROJECT
             LOGINFORM loginForm = new LOGINFORM();
             this.Hide(); // Hide the current form
             loginForm.Show(); // Show the login form
+        }
+
+        private void TXTSEARCH_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = TXTSEARCH.Text.Trim();
+            ShowAllCoursesInFlowPanel(searchText);
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(admin_control_form));
             this.GRIDVIEWSHOWALL = new System.Windows.Forms.DataGridView();
             this.BTNSHOWALL = new System.Windows.Forms.Button();
             this.BTNSEARCH = new System.Windows.Forms.Button();
@@ -63,22 +64,24 @@
             // 
             // BTNSHOWALL
             // 
+            this.BTNSHOWALL.BackColor = System.Drawing.Color.Transparent;
             this.BTNSHOWALL.Location = new System.Drawing.Point(262, 626);
             this.BTNSHOWALL.Name = "BTNSHOWALL";
             this.BTNSHOWALL.Size = new System.Drawing.Size(213, 56);
             this.BTNSHOWALL.TabIndex = 1;
             this.BTNSHOWALL.Text = "SHOW ALL";
-            this.BTNSHOWALL.UseVisualStyleBackColor = true;
+            this.BTNSHOWALL.UseVisualStyleBackColor = false;
             this.BTNSHOWALL.Click += new System.EventHandler(this.BTNSHOWALL_Click);
             // 
             // BTNSEARCH
             // 
+            this.BTNSEARCH.BackColor = System.Drawing.Color.Transparent;
             this.BTNSEARCH.Location = new System.Drawing.Point(1112, 37);
             this.BTNSEARCH.Name = "BTNSEARCH";
             this.BTNSEARCH.Size = new System.Drawing.Size(213, 48);
             this.BTNSEARCH.TabIndex = 2;
             this.BTNSEARCH.Text = "SEARCH";
-            this.BTNSEARCH.UseVisualStyleBackColor = true;
+            this.BTNSEARCH.UseVisualStyleBackColor = false;
             this.BTNSEARCH.Click += new System.EventHandler(this.BTNSEARCH_Click);
             // 
             // TXTSEARCH
@@ -93,7 +96,9 @@
             // LBLID
             // 
             this.LBLID.AutoSize = true;
+            this.LBLID.BackColor = System.Drawing.Color.Transparent;
             this.LBLID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBLID.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.LBLID.Location = new System.Drawing.Point(27, 101);
             this.LBLID.Name = "LBLID";
             this.LBLID.Size = new System.Drawing.Size(33, 25);
@@ -113,7 +118,9 @@
             // LBLUSERNAME
             // 
             this.LBLUSERNAME.AutoSize = true;
+            this.LBLUSERNAME.BackColor = System.Drawing.Color.Transparent;
             this.LBLUSERNAME.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBLUSERNAME.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.LBLUSERNAME.Location = new System.Drawing.Point(24, 171);
             this.LBLUSERNAME.Name = "LBLUSERNAME";
             this.LBLUSERNAME.Size = new System.Drawing.Size(132, 25);
@@ -132,7 +139,9 @@
             // LBLPASSWORD
             // 
             this.LBLPASSWORD.AutoSize = true;
+            this.LBLPASSWORD.BackColor = System.Drawing.Color.Transparent;
             this.LBLPASSWORD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBLPASSWORD.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.LBLPASSWORD.Location = new System.Drawing.Point(27, 244);
             this.LBLPASSWORD.Name = "LBLPASSWORD";
             this.LBLPASSWORD.Size = new System.Drawing.Size(138, 25);
@@ -151,7 +160,9 @@
             // LBLUSERTYPE
             // 
             this.LBLUSERTYPE.AutoSize = true;
+            this.LBLUSERTYPE.BackColor = System.Drawing.Color.Transparent;
             this.LBLUSERTYPE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBLUSERTYPE.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.LBLUSERTYPE.Location = new System.Drawing.Point(27, 316);
             this.LBLUSERTYPE.Name = "LBLUSERTYPE";
             this.LBLUSERTYPE.Size = new System.Drawing.Size(126, 25);
@@ -170,7 +181,9 @@
             // LBLSTATUS
             // 
             this.LBLSTATUS.AutoSize = true;
+            this.LBLSTATUS.BackColor = System.Drawing.Color.Transparent;
             this.LBLSTATUS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBLSTATUS.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.LBLSTATUS.Location = new System.Drawing.Point(27, 397);
             this.LBLSTATUS.Name = "LBLSTATUS";
             this.LBLSTATUS.Size = new System.Drawing.Size(100, 25);
@@ -188,49 +201,55 @@
             // 
             // BTNUPDATE
             // 
+            this.BTNUPDATE.BackColor = System.Drawing.Color.Transparent;
             this.BTNUPDATE.Location = new System.Drawing.Point(12, 626);
             this.BTNUPDATE.Name = "BTNUPDATE";
             this.BTNUPDATE.Size = new System.Drawing.Size(184, 56);
             this.BTNUPDATE.TabIndex = 15;
             this.BTNUPDATE.Text = "UPDATE";
-            this.BTNUPDATE.UseVisualStyleBackColor = true;
+            this.BTNUPDATE.UseVisualStyleBackColor = false;
             this.BTNUPDATE.Click += new System.EventHandler(this.BTNUPDATE_Click);
             // 
             // BTNADD
             // 
+            this.BTNADD.BackColor = System.Drawing.Color.Transparent;
             this.BTNADD.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.BTNADD.Location = new System.Drawing.Point(262, 462);
             this.BTNADD.Name = "BTNADD";
             this.BTNADD.Size = new System.Drawing.Size(213, 56);
             this.BTNADD.TabIndex = 16;
             this.BTNADD.Text = "ADD";
-            this.BTNADD.UseVisualStyleBackColor = true;
+            this.BTNADD.UseVisualStyleBackColor = false;
             this.BTNADD.Click += new System.EventHandler(this.BTNADD_Click);
             // 
             // BTNBACK
             // 
+            this.BTNBACK.BackColor = System.Drawing.Color.Transparent;
             this.BTNBACK.Location = new System.Drawing.Point(1112, 626);
             this.BTNBACK.Name = "BTNBACK";
             this.BTNBACK.Size = new System.Drawing.Size(213, 56);
             this.BTNBACK.TabIndex = 17;
             this.BTNBACK.Text = "BACK";
-            this.BTNBACK.UseVisualStyleBackColor = true;
+            this.BTNBACK.UseVisualStyleBackColor = false;
             this.BTNBACK.Click += new System.EventHandler(this.BTNBACK_Click);
             // 
             // BTNSHOWCOURSE
             // 
+            this.BTNSHOWCOURSE.BackColor = System.Drawing.Color.Transparent;
             this.BTNSHOWCOURSE.Location = new System.Drawing.Point(515, 37);
             this.BTNSHOWCOURSE.Name = "BTNSHOWCOURSE";
             this.BTNSHOWCOURSE.Size = new System.Drawing.Size(213, 48);
             this.BTNSHOWCOURSE.TabIndex = 18;
             this.BTNSHOWCOURSE.Text = "EXIT";
-            this.BTNSHOWCOURSE.UseVisualStyleBackColor = true;
+            this.BTNSHOWCOURSE.UseVisualStyleBackColor = false;
             this.BTNSHOWCOURSE.Click += new System.EventHandler(this.BTNSHOWCOURSE_Click);
             // 
             // admin_control_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1337, 694);
             this.Controls.Add(this.BTNSHOWCOURSE);
             this.Controls.Add(this.BTNBACK);

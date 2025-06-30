@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(signup_form));
             this.TXTPASSWORD = new System.Windows.Forms.TextBox();
             this.LBLPASSWORD = new System.Windows.Forms.Label();
             this.LBLUSERNAME = new System.Windows.Forms.Label();
@@ -44,13 +45,13 @@
             // 
             // TXTPASSWORD
             // 
-            this.TXTPASSWORD.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TXTPASSWORD.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.TXTPASSWORD.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXTPASSWORD.Location = new System.Drawing.Point(30, 333);
+            this.TXTPASSWORD.Location = new System.Drawing.Point(49, 312);
             this.TXTPASSWORD.Multiline = true;
             this.TXTPASSWORD.Name = "TXTPASSWORD";
             this.TXTPASSWORD.PasswordChar = '*';
-            this.TXTPASSWORD.Size = new System.Drawing.Size(325, 31);
+            this.TXTPASSWORD.Size = new System.Drawing.Size(219, 31);
             this.TXTPASSWORD.TabIndex = 10;
             this.TXTPASSWORD.TextChanged += new System.EventHandler(this.TXTPASSWORD_TextChanged);
             // 
@@ -59,7 +60,7 @@
             this.LBLPASSWORD.AutoSize = true;
             this.LBLPASSWORD.BackColor = System.Drawing.Color.Transparent;
             this.LBLPASSWORD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLPASSWORD.Location = new System.Drawing.Point(16, 298);
+            this.LBLPASSWORD.Location = new System.Drawing.Point(44, 255);
             this.LBLPASSWORD.Name = "LBLPASSWORD";
             this.LBLPASSWORD.Size = new System.Drawing.Size(138, 25);
             this.LBLPASSWORD.TabIndex = 9;
@@ -70,7 +71,7 @@
             this.LBLUSERNAME.AutoSize = true;
             this.LBLUSERNAME.BackColor = System.Drawing.Color.Transparent;
             this.LBLUSERNAME.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLUSERNAME.Location = new System.Drawing.Point(22, 176);
+            this.LBLUSERNAME.Location = new System.Drawing.Point(44, 64);
             this.LBLUSERNAME.Name = "LBLUSERNAME";
             this.LBLUSERNAME.Size = new System.Drawing.Size(132, 25);
             this.LBLUSERNAME.TabIndex = 8;
@@ -79,20 +80,21 @@
             // 
             // TXTUSERNAME
             // 
-            this.TXTUSERNAME.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TXTUSERNAME.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.TXTUSERNAME.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXTUSERNAME.Location = new System.Drawing.Point(30, 232);
+            this.TXTUSERNAME.Location = new System.Drawing.Point(49, 104);
             this.TXTUSERNAME.Multiline = true;
             this.TXTUSERNAME.Name = "TXTUSERNAME";
-            this.TXTUSERNAME.Size = new System.Drawing.Size(325, 31);
+            this.TXTUSERNAME.Size = new System.Drawing.Size(219, 31);
             this.TXTUSERNAME.TabIndex = 7;
             this.TXTUSERNAME.TextChanged += new System.EventHandler(this.TXTUSERNAME_TextChanged);
             // 
             // LBLUSERROLE
             // 
             this.LBLUSERROLE.AutoSize = true;
+            this.LBLUSERROLE.BackColor = System.Drawing.Color.Transparent;
             this.LBLUSERROLE.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLUSERROLE.Location = new System.Drawing.Point(45, 495);
+            this.LBLUSERROLE.Location = new System.Drawing.Point(45, 499);
             this.LBLUSERROLE.Name = "LBLUSERROLE";
             this.LBLUSERROLE.Size = new System.Drawing.Size(115, 20);
             this.LBLUSERROLE.TabIndex = 11;
@@ -106,7 +108,7 @@
             "STUDENT",
             "TEACHER",
             "GUEST"});
-            this.comboBox1.Location = new System.Drawing.Point(204, 491);
+            this.comboBox1.Location = new System.Drawing.Point(187, 499);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 15;
@@ -126,7 +128,7 @@
             // BTNGOBACK
             // 
             this.BTNGOBACK.BackColor = System.Drawing.Color.Transparent;
-            this.BTNGOBACK.Location = new System.Drawing.Point(268, 566);
+            this.BTNGOBACK.Location = new System.Drawing.Point(223, 566);
             this.BTNGOBACK.Name = "BTNGOBACK";
             this.BTNGOBACK.Size = new System.Drawing.Size(151, 64);
             this.BTNGOBACK.TabIndex = 17;
@@ -139,7 +141,7 @@
             this.LBLCONFIRM.AutoSize = true;
             this.LBLCONFIRM.BackColor = System.Drawing.SystemColors.Window;
             this.LBLCONFIRM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLCONFIRM.Location = new System.Drawing.Point(25, 395);
+            this.LBLCONFIRM.Location = new System.Drawing.Point(44, 373);
             this.LBLCONFIRM.Name = "LBLCONFIRM";
             this.LBLCONFIRM.Size = new System.Drawing.Size(187, 25);
             this.LBLCONFIRM.TabIndex = 18;
@@ -148,9 +150,9 @@
             // 
             // TXTCONFIRMPASS
             // 
-            this.TXTCONFIRMPASS.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TXTCONFIRMPASS.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.TXTCONFIRMPASS.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXTCONFIRMPASS.Location = new System.Drawing.Point(39, 430);
+            this.TXTCONFIRMPASS.Location = new System.Drawing.Point(49, 426);
             this.TXTCONFIRMPASS.Multiline = true;
             this.TXTCONFIRMPASS.Name = "TXTCONFIRMPASS";
             this.TXTCONFIRMPASS.PasswordChar = '*';
@@ -160,10 +162,9 @@
             // 
             // TXTEMAIL
             // 
-            this.TXTEMAIL.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.TXTEMAIL.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TXTEMAIL.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.TXTEMAIL.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXTEMAIL.Location = new System.Drawing.Point(645, 232);
+            this.TXTEMAIL.Location = new System.Drawing.Point(49, 205);
             this.TXTEMAIL.Multiline = true;
             this.TXTEMAIL.Name = "TXTEMAIL";
             this.TXTEMAIL.Size = new System.Drawing.Size(325, 31);
@@ -175,7 +176,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(795, 176);
+            this.label1.Location = new System.Drawing.Point(44, 160);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 25);
             this.label1.TabIndex = 21;
@@ -186,9 +187,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(982, 663);
+            this.ClientSize = new System.Drawing.Size(1047, 663);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TXTEMAIL);
             this.Controls.Add(this.TXTCONFIRMPASS);

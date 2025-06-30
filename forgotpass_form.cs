@@ -58,15 +58,11 @@ namespace C_PROJECT
                 return;
             }
 
-            //if (NEWPASS_CHANGE.Text.Length < 4)
-            //{
-            //    MessageBox.Show("Password must be at least 4 characters long.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
+            
 
             //try
             //{
-                CRUD db = new CRUD();
+            CRUD db = new CRUD();
 
                 // First verify that the username and email combination exists
                 string verifyQuery = "SELECT COUNT(*) FROM signup_info WHERE Username = '" + TXTUSERNAME.Text + "' AND Email = '" + TXTEMAIL.Text + "'";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(showcourse_form));
             this.GRIDVIEWSHOWALL = new System.Windows.Forms.DataGridView();
             this.BTNSHOWCOURSES = new System.Windows.Forms.Button();
             this.BTNUPDATE = new System.Windows.Forms.Button();
@@ -105,6 +106,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1105, 621);
             this.Controls.Add(this.TXTSEARCH);
             this.Controls.Add(this.BTNBACK);
@@ -112,6 +115,7 @@
             this.Controls.Add(this.BTNUPDATE);
             this.Controls.Add(this.BTNSHOWCOURSES);
             this.Controls.Add(this.GRIDVIEWSHOWALL);
+            this.DoubleBuffered = true;
             this.Name = "showcourse_form";
             this.Text = "Course Management - View, Update & Delete Courses";
             this.Load += new System.EventHandler(this.showcourse_form_Load);

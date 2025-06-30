@@ -139,5 +139,10 @@ namespace C_PROJECT
             this.Hide();
             course_upload.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -75,7 +75,7 @@ namespace C_PROJECT
         {
 
             OpenFileDialog open = new OpenFileDialog();
-            open.Filter= "image files (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png";
+           // open.Filter= "   *.jpg;    *.png   ";
             if (open.ShowDialog() == DialogResult.OK)
             {
                 // Assuming you want to display the selected image in a PictureBox named 'pictureBox1'
@@ -232,6 +232,26 @@ namespace C_PROJECT
             LOGINFORM loginForm = new LOGINFORM();
             this.Hide(); // Hide the current form
             loginForm.Show(); // Show the login form
+        }
+
+        private void BTNUPLOAD_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TXTCOURSENAME_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BTNADDCOURSE_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LBLYTLINK_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

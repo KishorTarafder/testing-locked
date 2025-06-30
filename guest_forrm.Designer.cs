@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(guest_forrm));
             this.LBLBALACE = new System.Windows.Forms.Label();
             this.LBLSHOWUSRNAME = new System.Windows.Forms.Label();
             this.LBLUSER = new System.Windows.Forms.Label();
@@ -80,7 +81,7 @@
             this.TXTSEARCH.Location = new System.Drawing.Point(666, 22);
             this.TXTSEARCH.Multiline = true;
             this.TXTSEARCH.Name = "TXTSEARCH";
-            this.TXTSEARCH.Size = new System.Drawing.Size(346, 46);
+            this.TXTSEARCH.Size = new System.Drawing.Size(282, 46);
             this.TXTSEARCH.TabIndex = 10;
             this.TXTSEARCH.TextChanged += new System.EventHandler(this.TXTSEARCH_TextChanged);
             // 
@@ -98,6 +99,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(960, 565);
             this.Controls.Add(this.BTNBACK);
             this.Controls.Add(this.TXTSEARCH);
@@ -105,6 +108,7 @@
             this.Controls.Add(this.LBLSHOWUSRNAME);
             this.Controls.Add(this.LBLUSER);
             this.Controls.Add(this.FLOWLATOUTPNL);
+            this.DoubleBuffered = true;
             this.Name = "guest_forrm";
             this.Text = "guest";
             this.ResumeLayout(false);
