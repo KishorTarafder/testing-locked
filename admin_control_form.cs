@@ -21,22 +21,23 @@ namespace C_PROJECT
         private void BTNSHOWALL_Click(object sender, EventArgs e)
         {
 
-            // Define the SQL query
+            
             string query = "SELECT * FROM signup_info";
 
-            // Create a SqlConnection instance using DBConnection helper
+            
             SqlConnection con = DBConnection.GetConnection();
 
-            // Create a SqlDataAdapter with the query and the connection
+            
             SqlDataAdapter sda = new SqlDataAdapter(query, con);
 
-            // Create a DataTable to hold the data from the database
+
+
+
             DataTable dt = new DataTable();
 
-            // Fill the DataTable using the SqlDataAdapter
-            sda.Fill(dt);
 
-            // Bind the DataTable to the DataGridView
+
+            sda.Fill(dt);
             GRIDVIEWSHOWALL.DataSource = dt;
         }
 
@@ -53,19 +54,12 @@ namespace C_PROJECT
 
             string query = "SELECT * FROM signup_info WHERE Username LIKE '%" + TXTSEARCH.Text + "%'";
 
-            // Create a SqlConnection instance using DBConnection helper
             SqlConnection con = DBConnection.GetConnection();
 
-            // Create a SqlDataAdapter with the query and the connection
             SqlDataAdapter sda = new SqlDataAdapter(query, con);
 
-            // Create a DataTable to hold the data from the database
             DataTable dt = new DataTable();
-
-            // Fill the DataTable using the SqlDataAdapter
             sda.Fill(dt);
-
-            // Bind the DataTable to the DataGridView to show filtered results
             GRIDVIEWSHOWALL.DataSource = dt;
 
 
@@ -75,13 +69,10 @@ namespace C_PROJECT
         {
 
 
-            // Ensure a valid row is selected (not header row)
             if (e.RowIndex >= 0)
             {
-                // Get the selected row
                 DataGridViewRow selectedRow = GRIDVIEWSHOWALL.Rows[e.RowIndex];
 
-                // Populate the textboxes with the selected row values
                 TXTID.Text = selectedRow.Cells["ID"].Value.ToString();
                 TXTUSERNAME.Text = selectedRow.Cells["Username"].Value.ToString();
                 TXTPASSWORD.Text = selectedRow.Cells["Password"].Value.ToString();
