@@ -41,7 +41,7 @@ namespace C_PROJECT
         }
 
 
-        
+
 
         private void GRIDVIEWSHOWALL_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -74,7 +74,7 @@ namespace C_PROJECT
         private void GRIDVIEWSHOWALL_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-           
+
             // Ensure a valid row is selected (not header row)
             if (e.RowIndex >= 0)
             {
@@ -97,7 +97,7 @@ namespace C_PROJECT
 
 
 
-        
+
 
         private void TXTID_TextChanged(object sender, EventArgs e)
         {
@@ -230,63 +230,8 @@ namespace C_PROJECT
 
         private void BTNSHOWCOURSE_Click(object sender, EventArgs e)
         {
-            //showcourse_form showCourseForm = new showcourse_form();
-            //this.Hide();
             this.Close(); // Close the current form
         }
     }
-        //{
-        //    // Check if all required fields are filled
-        //    if (string.IsNullOrEmpty(TXTUSERNAME.Text) ||
-        //        string.IsNullOrEmpty(TXTPASSWORD.Text) ||
-        //        string.IsNullOrEmpty(TXTUSERTYPE.Text) ||
-        //        string.IsNullOrEmpty(TXTSTATUS.Text))
-        //    {
-        //        MessageBox.Show("Please fill all fields!", "Missing Information",
-        //            MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        //        return;
-        //    }
-
-        //    // Create CRUD instance
-        //    CRUD db = new CRUD();
-
-        //    // Insert new user with default balance of 1000
-        //    string insertQuery = "INSERT INTO signup_info (Username, Password, UserType, Status, Balance) VALUES ('" +
-        //                        TXTUSERNAME.Text + "', '" +
-        //                        TXTPASSWORD.Text + "', '" +
-        //                        TXTUSERTYPE.Text + "', '" +
-        //                        TXTSTATUS.Text + "', 1000)";
-
-        //    try
-        //    {
-        //        int result = db.Insert(insertQuery);
-
-        //        if (result > 0)
-        //        {
-        //            MessageBox.Show("User added successfully!", "Success",
-        //                MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-        //            // Clear the textboxes after successful addition
-        //            TXTID.Text = "";
-        //            TXTUSERNAME.Text = "";
-        //            TXTPASSWORD.Text = "";
-        //            TXTUSERTYPE.Text = "";
-        //            TXTSTATUS.Text = "";
-
-        //            // Refresh the DataGridView to show the new user
-        //            BTNSHOWALL_Click(null, null);
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Failed to add user. Please try again.", "Error",
-        //                MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Error: " + ex.Message, "Database Error",
-        //            MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-
-    }
+}
 

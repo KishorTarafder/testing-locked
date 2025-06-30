@@ -16,13 +16,12 @@ namespace C_PROJECT
     {
 
         string imagepath;
-        private string username; // Store the logged-in user's username
+        private string username;
 
-        // Constructor that accepts username
         public course_upload(string user)
         {
             InitializeComponent();
-            username = user; // Set the username for use in this form
+            username = user;
         }
 
         public course_upload()
@@ -30,7 +29,6 @@ namespace C_PROJECT
             InitializeComponent();
         }
 
-        // Method to show user information in the labels
         private void ShowUserInfo()
         {
             if (string.IsNullOrEmpty(username))
@@ -42,25 +40,20 @@ namespace C_PROJECT
 
             CRUD db = new CRUD();
 
-            // Prepare a query to get the user's info
             string sql = $"SELECT Username, Balance FROM signup_info WHERE Username = '{username}'";
 
-            // Execute the query, get the results in a DataTable
             DataTable dt = db.Select(sql);
 
             if (dt.Rows.Count == 1)
             {
-                // Get the username and balance from the first row
                 string user = dt.Rows[0]["Username"].ToString();
                 int bal = Convert.ToInt32(dt.Rows[0]["Balance"]);
 
-                // Show in your labels
                 LBLSHOWUSRNAME.Text = $"Welcome, {user}!";
                 LBLBALACE.Text = $"Balance: {bal}";
             }
             else
             {
-                // If not found, show something empty or error
                 LBLSHOWUSRNAME.Text = "Unknown user";
                 LBLBALACE.Text = "Balance: N/A";
             }
@@ -74,11 +67,9 @@ namespace C_PROJECT
         private void BTNBROWSE_Click(object sender, EventArgs e)
         {
 
-            OpenFileDialog open = new OpenFileDialog();
-           // open.Filter= "   *.jpg;    *.png   ";
+                        OpenFileDialog open = new OpenFileDialog();
             if (open.ShowDialog() == DialogResult.OK)
             {
-                // Assuming you want to display the selected image in a PictureBox named 'pictureBox1'
                 pictureBox1.Image = new Bitmap(open.FileName);
                 imagepath = open.FileName; 
             }
@@ -91,16 +82,14 @@ namespace C_PROJECT
 
         }
 
-        private void BTNSAVE_Click(object sender, EventArgs e)
+                private void BTNSAVE_Click(object sender, EventArgs e)
         {
-            // Check if user is logged in
             if (string.IsNullOrEmpty(username))
             {
                 MessageBox.Show("You must be logged in to upload a course!", "Login Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Validate required fields
             if (string.IsNullOrEmpty(TXTCOURSENAME.Text))
             {
                 MessageBox.Show("Please enter a course name!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -113,8 +102,6 @@ namespace C_PROJECT
                 return;
             }
 
-            //...............convert korsi binary teh 
-
             byte[] imageData = null;
             if (imagepath != "")
             {
@@ -123,36 +110,17 @@ namespace C_PROJECT
                     imageData = new byte[st.Length];
                     st.Read(imageData, 0, imageData.Length);
                 }
-                {
-
-                }
             }
-
-
-
-
-
-            //.............//
             SqlConnection conn = DBConnection.GetConnection();
             try
             {
-              //  conn.Open();
-              //  string sql = "INSERT INTO COURSES (CourseName, CourseImage, YouTubeLink) VALUES (@CourseName, @CourseImage, @YouTubeLink)";
-              //  SqlCommand cmd = new SqlCommand(sql, conn);
-              //  cmd.Parameters.AddWithValue("@CourseName", TXTCOURSENAME.Text);
-              ////cmd.Parameters.AddWithValue("@CourseDescription", TXTDESCRIPTION.Text);
-              //  cmd.Parameters.AddWithValue("@CourseImage", imageData); // Assuming imageData is a byte array
-              //  cmd.Parameters.AddWithValue("@YouTubeLink", TXTYOUTUBELINK.Text);
-
-
                 conn.Open();
                 string sql = "INSERT INTO COURSES (TITLE, THUMBNAIL, YOUTUBEID, PRICE, ADDEDBY) VALUES (@TITLE, @THUMBNAIL, @YOUTUBEID, @PRICE, @ADDEDBY)";
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@TITLE", TXTCOURSENAME.Text);            // Course name
-                cmd.Parameters.AddWithValue("@THUMBNAIL", imageData);                 // Image
+                cmd.Parameters.AddWithValue("@TITLE", TXTCOURSENAME.Text);
+                cmd.Parameters.AddWithValue("@THUMBNAIL", imageData);
                 cmd.Parameters.AddWithValue("@YOUTUBEID", TXTYOUTUBELINK.Text);
                 cmd.Parameters.AddWithValue("@PRICE", TXTPRICE.Text);
-                // Add the username who uploaded the course - simple way!
                 if (username == null || username == "")
                 {
                     cmd.Parameters.AddWithValue("@ADDEDBY", "Unknown");
@@ -161,9 +129,6 @@ namespace C_PROJECT
                 {
                     cmd.Parameters.AddWithValue("@ADDEDBY", username);
                 }
-
-
-
 
                 int result = cmd.ExecuteNonQuery();
                 if (result > 0)
@@ -186,9 +151,6 @@ namespace C_PROJECT
                 {
                     conn.Close();
                 }
-            }
-            {
-               
             }
 
 
@@ -219,7 +181,7 @@ namespace C_PROJECT
 
         private void course_upload_Load(object sender, EventArgs e)
         {
-            ShowUserInfo(); // Display user information when form loads
+            ShowUserInfo();
         }
 
         private void BTNBACK_Click(object sender, EventArgs e)
@@ -230,8 +192,8 @@ namespace C_PROJECT
         private void BTNBACK_Click_1(object sender, EventArgs e)
         {
             LOGINFORM loginForm = new LOGINFORM();
-            this.Hide(); // Hide the current form
-            loginForm.Show(); // Show the login form
+            this.Hide();
+            loginForm.Show();
         }
 
         private void BTNUPLOAD_Click(object sender, EventArgs e)

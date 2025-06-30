@@ -25,19 +25,6 @@ namespace C_PROJECT
             InitializeComponent();
         }
 
-
-        //SqlConnection con = new SqlConnection("Data Source=DESKTOP-HNPCF1F\\SQLEXPRESS;Initial Catalog=DBLOGIN;Integrated Security=True;Trust Server Certificate=True");
-
-
-
-
-
-
-
-
-
-
-
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -62,12 +49,9 @@ namespace C_PROJECT
                         new admin_control_form().Show();
                         this.Hide();
                     }
-                    else if (userType == "STUDENT")
+                    else                     if (userType == "STUDENT")
                     {
-                        //new student_form().Show();
-
-
-                        new student_form(TXTUSERNAME.Text).Show(); // Pass username!
+                        new student_form(TXTUSERNAME.Text).Show();
 
                         this.Hide();
                     }
@@ -131,10 +115,6 @@ namespace C_PROJECT
 
         private void BTNTESTADMIN_Click(object sender, EventArgs e)
         {
-            //Form adminForm = new admin_control_form();
-            //this.Hide();
-            //adminForm.Show();
-
             Form course_upload = new course_upload(TXTUSERNAME.Text); // Pass the username
             this.Hide();
             course_upload.Show();

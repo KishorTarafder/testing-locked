@@ -43,9 +43,10 @@
             this.LBLBALACE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBLBALACE.Location = new System.Drawing.Point(176, 63);
             this.LBLBALACE.Name = "LBLBALACE";
-            this.LBLBALACE.Size = new System.Drawing.Size(113, 25);
+            this.LBLBALACE.Size = new System.Drawing.Size(24, 25);
             this.LBLBALACE.TabIndex = 9;
-            this.LBLBALACE.Text = "BALANCE";
+            this.LBLBALACE.Text = "0";
+            this.LBLBALACE.Click += new System.EventHandler(this.LBLBALACE_Click);
             // 
             // LBLSHOWUSRNAME
             // 
@@ -53,9 +54,10 @@
             this.LBLSHOWUSRNAME.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBLSHOWUSRNAME.Location = new System.Drawing.Point(176, 22);
             this.LBLSHOWUSRNAME.Name = "LBLSHOWUSRNAME";
-            this.LBLSHOWUSRNAME.Size = new System.Drawing.Size(110, 25);
+            this.LBLSHOWUSRNAME.Size = new System.Drawing.Size(65, 25);
             this.LBLSHOWUSRNAME.TabIndex = 8;
-            this.LBLSHOWUSRNAME.Text = "DEFAULT";
+            this.LBLSHOWUSRNAME.Text = "guest";
+            this.LBLSHOWUSRNAME.Click += new System.EventHandler(this.LBLSHOWUSRNAME_Click);
             // 
             // LBLUSER
             // 

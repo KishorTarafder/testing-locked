@@ -250,7 +250,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1337, 694);
+            this.ClientSize = new System.Drawing.Size(1351, 694);
             this.Controls.Add(this.BTNSHOWCOURSE);
             this.Controls.Add(this.BTNBACK);
             this.Controls.Add(this.BTNADD);

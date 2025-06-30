@@ -39,7 +39,6 @@ namespace C_PROJECT
 
         private void BTNCHANGEPASS_Click(object sender, EventArgs e)
         {
-            // Validate input fields
             if (string.IsNullOrWhiteSpace(TXTUSERNAME.Text))
             {
                 MessageBox.Show("Please enter your username.");
@@ -58,13 +57,8 @@ namespace C_PROJECT
                 return;
             }
 
-            
-
-            //try
-            //{
             CRUD db = new CRUD();
 
-                // First verify that the username and email combination exists
                 string verifyQuery = "SELECT COUNT(*) FROM signup_info WHERE Username = '" + TXTUSERNAME.Text + "' AND Email = '" + TXTEMAIL.Text + "'";
                 DataTable verifyResult = db.Select(verifyQuery);
 
@@ -74,7 +68,6 @@ namespace C_PROJECT
                     
                     if (matchCount > 0)
                     {
-                        // Username and email match, proceed with password update
                         string updateQuery = "UPDATE signup_info SET Password = '" + NEWPASS_CHANGE.Text + "' WHERE Username = '" + TXTUSERNAME.Text + "' AND Email = '" + TXTEMAIL.Text + "'";
                         int updateResult = db.Update(updateQuery);
 
@@ -82,14 +75,13 @@ namespace C_PROJECT
                         {
                             MessageBox.Show("Password changed successfully! You can now login with your new password.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             
-                            // Clear the form fields
                             TXTUSERNAME.Clear();
                             TXTEMAIL.Clear();
                             NEWPASS_CHANGE.Clear();
 
 
                         LOGINFORM loginForm = new LOGINFORM();
-                        this.Hide(); // Hide the current form
+                        this.Hide();
                         loginForm.Show();
 
 
@@ -110,8 +102,6 @@ namespace C_PROJECT
                     MessageBox.Show("Error verifying credentials. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            
-        //}
 
         private void BTNBACK_Click(object sender, EventArgs e)
         {
