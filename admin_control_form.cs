@@ -125,17 +125,15 @@ namespace C_PROJECT
 
             CRUD db = new CRUD();
 
-            // Construct the SQL update query
             string updateQuery = "UPDATE signup_info SET Username = '" + TXTUSERNAME.Text + "', Password = '" + TXTPASSWORD.Text + "', UserType = '" + TXTUSERTYPE.Text + "', Status = '" + TXTSTATUS.Text + "' WHERE ID = " + TXTID.Text;
 
-            // Call the Insert method from CRUD class for update query
-            int result = db.Update(updateQuery);  // Use Update method from CRUD to execute query
+            
+            int result = db.Update(updateQuery); 
 
-            // Check if the update was successful
             if (result > 0)
             {
                 MessageBox.Show("Record updated successfully!");
-                BTNSHOWALL_Click(null, null); // Refresh the DataGridView after the update
+                BTNSHOWALL_Click(null, null); 
             }
             else
             {
@@ -149,7 +147,7 @@ namespace C_PROJECT
         private void BTNADD_Click(object sender, EventArgs e)
         {
 
-            // Check if all required fields are filled
+             
             if (string.IsNullOrEmpty(TXTUSERNAME.Text) ||
                 string.IsNullOrEmpty(TXTPASSWORD.Text) ||
                 string.IsNullOrEmpty(TXTUSERTYPE.Text) ||
@@ -162,7 +160,7 @@ namespace C_PROJECT
 
             CRUD db = new CRUD();
 
-            // Check if username already exists
+         
             string checkQuery = "SELECT COUNT(*) FROM signup_info WHERE Username = '" + TXTUSERNAME.Text + "'";
             DataTable dt = db.Select(checkQuery);
 
@@ -189,14 +187,14 @@ namespace C_PROJECT
                     MessageBox.Show("User added successfully!", "Success",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Clear the textboxes after successful addition
+                     
                     TXTID.Text = "";
                     TXTUSERNAME.Text = "";
                     TXTPASSWORD.Text = "";
                     TXTUSERTYPE.Text = "";
                     TXTSTATUS.Text = "";
 
-                    // Refresh the DataGridView to show the new user
+                       
                     BTNSHOWALL_Click(null, null);
                 }
                 else
@@ -215,13 +213,13 @@ namespace C_PROJECT
         private void BTNBACK_Click(object sender, EventArgs e)
         {
             LOGINFORM loginForm = new LOGINFORM();
-            this.Hide(); // Hide the current form
-            loginForm.Show(); // Show the login form
+            this.Hide(); 
+            loginForm.Show();  
         }
 
         private void BTNSHOWCOURSE_Click(object sender, EventArgs e)
         {
-            this.Close(); // Close the current form
+            this.Close();  
         }
     }
 }

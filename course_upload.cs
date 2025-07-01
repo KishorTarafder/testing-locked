@@ -47,10 +47,10 @@ namespace C_PROJECT
             if (dt.Rows.Count == 1)
             {
                 string user = dt.Rows[0]["Username"].ToString();
-                int bal = Convert.ToInt32(dt.Rows[0]["Balance"]);
+                int balancee = Convert.ToInt32(dt.Rows[0]["Balance"]);
 
                 LBLSHOWUSRNAME.Text = $"Welcome, {user}!";
-                LBLBALACE.Text = $"Balance: {bal}";
+                LBLBALACE.Text = $"Balance: {balancee}";
             }
             else
             {

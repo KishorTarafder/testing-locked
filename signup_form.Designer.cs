@@ -205,6 +205,7 @@
             this.Controls.Add(this.TXTUSERNAME);
             this.Name = "signup_form";
             this.Text = "signup_form";
+            this.Load += new System.EventHandler(this.signup_form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

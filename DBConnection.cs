@@ -14,9 +14,8 @@ namespace C_PROJECT
 
 
         
-        private static readonly string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=DBLOGIN;Integrated Security=True;";
+        private static string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=DBLOGIN;Integrated Security=True;";
 
-        // Public property to access the connection string from other classes
         public static string ConnectionString 
         { 
             get { return connectionString; } 

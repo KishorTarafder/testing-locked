@@ -103,6 +103,9 @@ namespace C_PROJECT
             }
         }
 
+
+        
+
         private void LBLUSERNAME_Click(object sender, EventArgs e)
         {
 
@@ -136,6 +139,11 @@ namespace C_PROJECT
         }
 
         private void TXTEMAIL_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void signup_form_Load(object sender, EventArgs e)
         {
 
         }

@@ -76,13 +76,13 @@ namespace C_PROJECT
 
 
            
-            ShowUserInfo(); // Display the student's info
+            ShowUserInfo(); // all student er info dekhabe
             ShowAllCoursesInFlowPanel(); 
         
 
         }
 
-        private void ShowAllCoursesInFlowPanel(string searchText = "")
+        private void ShowAllCoursesInFlowPanel(string searchText = "")//  course dekhabe and kinda dynamic
         {
             FLOWLATOUTPNL.Controls.Clear();
 
